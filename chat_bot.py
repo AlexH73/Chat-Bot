@@ -123,7 +123,7 @@ def first_dish_chooser():
             "2. Паста\n"
             "3. Стейк\n"
         )  # Выводим меню основных блюд
-        first_dish_choice = input()  # Получаем выбор пользователя
+        first_dish_choice = input("Введите Ваш выбор: ")  # Получаем выбор пользователя
         if first_dish_choice == "1":  # Если выбран пункт 1 (Пицца)
             pizza_chooser()  # Вызываем функцию выбора пиццы
             break  # Выходим из цикла
@@ -185,7 +185,7 @@ def pizza_extras_chooser():
             "3. Острый соус (+{:.2f}€)\n".format(PIZZA_SAUCE_PRICE),
             "4. Вернуться назад\n"
         )  # Выводим меню добавок для пиццы
-        pizza_extras_choice = input()  # Получаем выбор пользователя
+        pizza_extras_choice = input("Введите Ваш выбор: ")  # Получаем выбор пользователя
 
         if pizza_extras_choice == "1":  # Если выбран пункт 1 (Сыр)
             global first_dish_extra_name, first_dish_extra_price  # Используем глобальные переменные для сохранения данных о добавке
@@ -225,7 +225,7 @@ def pasta_extras_chooser():
             "3. Грибы (+{:.2f}€)\n".format(PASTA_MUSHROOMS_PRICE),
             "4. Вернуться назад\n"
         )  # Выводим меню добавок для пасты
-        pasta_extras_choice = input()  # Получаем выбор пользователя
+        pasta_extras_choice = input("Введите Ваш выбор: ")  # Получаем выбор пользователя
 
         if pasta_extras_choice == "1":  # Если выбран пункт 1 (Сыр)
             global first_dish_extra_name, first_dish_extra_price  # Используем глобальные переменные для сохранения данных о добавке
@@ -265,7 +265,7 @@ def steak_extras_chooser():
             "3. Картофель (+{:.2f}€)\n".format(STEAK_POTATOES_PRICE),
             "4. Вернуться назад\n"
         )  # Выводим меню добавок для стейка
-        steak_extras_choice = input("\n")  # Получаем выбор пользователя
+        steak_extras_choice = input("Введите Ваш выбор: ")  # Получаем выбор пользователя
 
         if steak_extras_choice == "1":  # Если выбран пункт 1 (Соус)
             global first_dish_extra_name, first_dish_extra_price  # Используем глобальные переменные для сохранения данных о добавке
@@ -305,7 +305,7 @@ def salad_chooser():
             "2. Греческий\n"
             "3. С тунцом\n"
         )  # Выводим меню салатов
-        salad_choice = input()  # Получаем выбор пользователя
+        salad_choice = input("Введите Ваш выбор: ")  # Получаем выбор пользователя
         if salad_choice == "1":  # Если выбран пункт 1 (Цезарь)
             cesar_chooser()  # Вызываем функцию выбора салата Цезарь
             break  # Выходим из цикла
@@ -367,7 +367,7 @@ def cesar_extras_chooser():
             "3. Сыр (+{:.2f}€)\n".format(CESAR_CHEESE_PRICE),
             "4. Вернуться назад\n"
         )  # Выводим меню добавок для салата Цезарь
-        cesar_extras_choice = input("\n")  # Получаем выбор пользователя
+        cesar_extras_choice = input("Введите Ваш выбор: ")  # Получаем выбор пользователя
 
         if cesar_extras_choice == "1":  # Если выбран пункт 1 (Курица)
             global salad_extra_name, salad_extra_price  # Используем глобальные переменные для сохранения данных о добавке
@@ -407,7 +407,7 @@ def greek_extras_chooser():
             "3. Перец (+{:.2f}€)\n".format(GREEK_PEPPERS_PRICE),
             "4. Вернуться назад\n"
         )  # Выводим меню добавок для греческого салата
-        greek_extras_choice = input("\n")  # Получаем выбор пользователя
+        greek_extras_choice = input("Введите Ваш выбор: ")  # Получаем выбор пользователя
 
         if greek_extras_choice == "1":  # Если выбран пункт 1 (Оливки)
             global salad_extra_name, salad_extra_price  # Используем глобальные переменные для сохранения данных о добавке
@@ -447,7 +447,7 @@ def tuna_extras_chooser():
             "3. Яйцо (+{:.2f}€)\n".format(TUNA_EGG_PRICE),
             "4. Вернуться назад\n"
         )  # Выводим меню добавок для салата с тунцом
-        tuna_extras_choice = input("\n")  # Получаем выбор пользователя
+        tuna_extras_choice = input("Введите Ваш выбор: ")  # Получаем выбор пользователя
 
         if tuna_extras_choice == "1":  # Если выбран пункт 1 (Оливки)
             global salad_extra_name, salad_extra_price  # Используем глобальные переменные для сохранения данных о добавке
@@ -487,7 +487,7 @@ def dessert_chooser():
             "2. Маффин\n"
             "3. Тирамису\n"
         )  # Выводим меню десертов
-        dessert_choice = input("\n")  # Получаем выбор пользователя
+        dessert_choice = input("Введите Ваш выбор: ")  # Получаем выбор пользователя
 
         if dessert_choice == "1":  # Если выбран пункт 1 (Чизкейк)
             cheesecake_chooser()  # Вызываем функцию выбора чизкейка
@@ -550,7 +550,7 @@ def cheesecake_extras_chooser():
             "3. Карамель (+{:.2f}€)\n".format(CHEESECAKE_CARAMEL_PRICE),
             "4. Вернуться назад\n"
         )  # Выводим меню добавок для чизкейка
-        cheesecake_extras_choice = input("\n")  # Получаем выбор пользователя
+        cheesecake_extras_choice = input("Введите Ваш выбор: ")  # Получаем выбор пользователя
 
         if cheesecake_extras_choice == "1":  # Если выбран пункт 1 (Ягоды)
             global dessert_extra_name, dessert_extra_price  # Используем глобальные переменные для сохранения данных о добавке
@@ -590,7 +590,7 @@ def muffin_extras_chooser():
             "3. Орехи (+{:.2f}€)\n".format(MUFFIN_NUTS_PRICE),
             "4. Вернуться назад\n"
         )  # Выводим меню добавок для маффина
-        muffin_extras_choice = input("\n")  # Получаем выбор пользователя
+        muffin_extras_choice = input("Введите Ваш выбор: ")  # Получаем выбор пользователя
 
         if muffin_extras_choice == "1":  # Если выбран пункт 1 (Ягоды)
             global dessert_extra_name, dessert_extra_price  # Используем глобальные переменные для сохранения данных о добавке
@@ -630,7 +630,7 @@ def tiramisu_extras_chooser():
             "3. Кофе (+{:.2f}€)\n".format(TIRAMISU_COFFEE_PRICE),
             "4. Вернуться назад\n"
         )  # Выводим меню добавок для тирамису
-        tiramisu_extras_choice = input("\n")  # Получаем выбор пользователя
+        tiramisu_extras_choice = input("Введите Ваш выбор: ")  # Получаем выбор пользователя
 
         if tiramisu_extras_choice == "1":  # Если выбран пункт 1 (Какао)
             global dessert_extra_name, dessert_extra_price  # Используем глобальные переменные для сохранения данных о добавке
@@ -670,7 +670,7 @@ def drink_chooser():
             "2. Чай\n"
             "3. Лимонад\n"
         )  # Выводим меню напитков
-        drink_choice = input("\n")  # Получаем выбор пользователя
+        drink_choice = input("Введите Ваш выбор: ")  # Получаем выбор пользователя
 
         if drink_choice == "1":  # Если выбран пункт 1 (Кофе)
             coffee_chooser()  # Вызываем функцию выбора кофе
@@ -733,7 +733,7 @@ def coffee_extras_chooser():
             "3. Сироп (+{:.2f}€)\n".format(COFFEE_SYRUP_PRICE),
             "4. Вернуться назад\n"
         )  # Выводим меню добавок для кофе
-        coffee_extras_choice = input("\n")  # Получаем выбор пользователя
+        coffee_extras_choice = input("Введите Ваш выбор: ")  # Получаем выбор пользователя
 
         if coffee_extras_choice == "1":  # Если выбран пункт 1 (Молоко)
             global drink_extra_name, drink_extra_price  # Используем глобальные переменные для сохранения данных о добавке
@@ -773,7 +773,7 @@ def tea_extras_chooser():
             "3. Мед (+{:.2f}€)\n".format(TEA_HONEY_PRICE),
             "4. Вернуться назад\n"
         )  # Выводим меню добавок для чая
-        tea_extras_choice = input("\n")  # Получаем выбор пользователя
+        tea_extras_choice = input("Введите Ваш выбор: ")  # Получаем выбор пользователя
 
         if tea_extras_choice == "1":  # Если выбран пункт 1 (Лимон)
             global drink_extra_name, drink_extra_price  # Используем глобальные переменные для сохранения данных о добавке
@@ -813,7 +813,7 @@ def lemonade_extras_chooser():
             "3. Сироп (+{:.2f}€)\n".format(LEMONADE_SYRUP_PRICE),
             "4. Вернуться назад\n"
         )  # Выводим меню добавок для лимонада
-        lemonade_extras_choice = input("\n")  # Получаем выбор пользователя
+        lemonade_extras_choice = input("Введите Ваш выбор: ")  # Получаем выбор пользователя
 
         if lemonade_extras_choice == "1":  # Если выбран пункт 1 (Мята)
             global drink_extra_name, drink_extra_price  # Используем глобальные переменные для сохранения данных о добавке
@@ -847,14 +847,14 @@ def start_order():
     """
     while True:  # Бесконечный цикл до тех пор, пока заказ не будет завершен
         print(
-            "Какое блюдо вы хотите?\n"
+            "Какое блюдо Вы закажете?\n"
             "0. Завершить заказ\n"
             "1. Основное блюдо\n"
             "2. Салат\n"
             "3. Десерт\n"
             "4. Напиток\n"
         )  # Выводим главное меню
-        main_course_choice = input("\n")  # Получаем выбор пользователя
+        main_course_choice = input("Введите Ваш выбор: ")  # Получаем выбор пользователя
 
         if main_course_choice == "0":  # Если выбран пункт 0 (Завершить заказ)
             complete_order()  # Вызываем функцию завершения заказа
@@ -879,7 +879,7 @@ def complete_order():
     """
     # Бесконечный цикл для отображения меню подтверждения заказа
     while True:
-        print("\n--- Ваш заказ ---")  # Разделитель и пустая строка для отступа
+        print(f"\n{'':^7}--- Ваш заказ ---")  # Разделитель и пустая строка для отступа
 
         order_items = []  # Создаем пустой список для хранения элементов заказа
         item_number = 1  # Инициализируем номер пункта заказа
@@ -887,37 +887,50 @@ def complete_order():
         if first_dish_name:
             # Добавляем в список информацию об основном блюде и его добавке
             order_items.append(
-                f"Основное блюдо: {first_dish_name} {f'с {first_dish_extra_name}' if first_dish_extra_name else ''}")
-        # Увеличиваем номер пункта
-        item_number += 1
+                f"{item_number}. Основное блюдо: {first_dish_name} ({first_dish_price:.2f}€)"
+                + (f"\n{'':<3}└─ Добавка: {first_dish_extra_name} ({first_dish_extra_price:.2f}€)"
+                   if first_dish_extra_name else "")
+            )
+            # Увеличиваем номер пункта
+            item_number += 1
         # Проверяем, выбран ли салат
         if salad_name:
             # Добавляем в список информацию о салате и его добавке
-            order_items.append(f"Салат: {salad_name} {f'с {salad_extra_name}' if salad_extra_name else ''}")
-        # Увеличиваем номер пункта
-        item_number += 1
+            order_items.append(
+                f"{item_number}. Салат: {salad_name} ({salad_price:.2f}€)"
+                + (f"\n{'':<3}└─ Добавка: {salad_extra_name} ({salad_extra_price:.2f}€)"
+                   if salad_extra_name else "")
+            )
+            # Увеличиваем номер пункта
+            item_number += 1
         # Проверяем, выбран ли десерт
         if dessert_name:
             # Добавляем в список информацию о десерте и его добавке
-            order_items.append(f"Десерт: {dessert_name} {f'с {dessert_extra_name}' if dessert_extra_name else ''}")
-        # Увеличиваем номер пункта
-        item_number += 1
+            order_items.append(
+                f"{item_number}. Десерт: {dessert_name} ({dessert_price:.2f}€)"
+                + (f"\n{'':<3}└─ Добавка: {dessert_extra_name} ({dessert_extra_price:.2f}€)"
+                   if dessert_extra_name else "")
+            )
+            # Увеличиваем номер пункта
+            item_number += 1
         # Проверяем, выбран ли напиток
         if drink_name:
             # Добавляем в список информацию о напитке и его добавке
-            order_items.append(f"Напиток: {drink_name} {f'с {drink_extra_name}' if drink_extra_name else ''}")
-        # Увеличиваем номер пункта
-        item_number += 1
-
+            order_items.append(
+                f"{item_number}. Напиток: {drink_name} ({drink_price:.2f}€)"
+                + (f"\n{'':<3}└─ Добавка: {drink_extra_name} ({drink_extra_price:.2f}€)"
+                   if drink_extra_name else "")
+            )
         # Выводим все элементы заказа
         for item in order_items:
             print(item)  # Выводим элементы заказа
-
-        print("-----------------")
-
+        print("-" * 34)
         # Подсчитываем общую стоимость заказа
         total_price = count_total_price()
-        print(f"Общая стоимость: {total_price:.2f}€")
+        print(f"Общая стоимость: {total_price:>15.2f}€")
+        print("-" * 34)
+
+        # Подсчитываем общую стоимость заказа
 
         print("0. Завершить заказ")
         print("5. Изменить/удалить блюдо")
@@ -925,8 +938,8 @@ def complete_order():
         while True:
             try:
                 # Получаем выбор пользователя
-                change_order = int(input("Хотите что-то изменить?: "))
-                if 0 <= change_order <= 5:
+                change_order = input("Хотите что-то изменить?: ")
+                if "0" <= change_order <= "5":
                     break  # Выходим из цикла, если ввод корректен
                 else:
                     # Сообщение об некорректном вводе
@@ -936,11 +949,11 @@ def complete_order():
                 print("Некорректный ввод")
 
         # Если пользователь выбрал завершение заказа
-        if change_order == 0:
+        if change_order == "0":
             print("Спасибо за заказ!")
             break  # Выходим из цикла и завершаем функцию
         # Если пользователь выбрал изменение/удаление заказа
-        elif change_order == 5:
+        elif change_order == "5":
             start_order()
             continue  # Пропускаем текущую итерацию цикла, чтобы вернуться в начало
         else:
