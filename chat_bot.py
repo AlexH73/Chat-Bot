@@ -19,7 +19,7 @@ LANGUAGES = {
         "invalid_language": "Неверный язык. Попробуйте снова.",
         "change_order": "Изменить заказ",
         "remove_item": "Удалить блюдо:",
-        "add_item": "Добавить блюдо:",
+        "add_item": "Добавить блюдо",
         "change_question": "Хотите что-то изменить?\n0. Завершить заказ\n5. Изменить/удалить блюдо"
     },
     "en": {
@@ -41,7 +41,7 @@ LANGUAGES = {
         "invalid_language": "Invalid language. Please try again.",
         "change_order": "Change order",
         "remove_item": "Remove item:",
-        "add_item": "Add item:",
+        "add_item": "Add item",
         "change_question": "Do you want to change anything?\n0. Finish order\n5. Change/remove dish"
     },
     "de": {
@@ -63,7 +63,7 @@ LANGUAGES = {
         "invalid_language": "Ungültige Sprache. Bitte versuchen Sie es erneut.",
         "change_order": "Bestellung ändern",
         "remove_item": "Element entfernen:",
-        "add_item": "Element hinzufügen:",
+        "add_item": "Element hinzufügen",
         "change_question": "Möchten Sie etwas ändern?\n0. Bestellung abschließen\n5. Gericht ändern/entfernen"
     },
 }
@@ -219,7 +219,8 @@ def choose_item(items, category_name, lang, selected_language, show_back=True):
             # Выводим пронумерованный список элементов меню с их названиями и ценами.
             print(f"{i}. {item['name'][selected_language]} ({item['price']:.2f}€)")
 
-        print(f"0. {lang['exit']}")
+        if not show_back:  # Изменено
+            print(f"0. {lang['exit']}")  # Изменено
         # Выводим опцию для пропуска выбора блюда
         if show_back:
             # Если show_back == True, выводим опцию "9. Назад".
@@ -228,7 +229,7 @@ def choose_item(items, category_name, lang, selected_language, show_back=True):
         choice = input(f"{lang['choose_dish']} ")
         # Получаем ввод от пользователя.
 
-        if choice == "0":
+        if choice == "0" and not show_back:  # Изменено
             # Если пользователь ввел "0", возвращаем None (пропуск выбора).
             return None
         if show_back and choice == "9":
@@ -349,7 +350,7 @@ def change_order(order, lang, selected_language):
             print(f"{i}. {item['name']}")
         print(f"0. {lang['exit']}")
         # Выводим опцию для пропуска изменения заказа.
-        print(f"a. {lang['add_item']}")
+        print(f"5. {lang['add_item']}")
         # Выводим опцию для добавления блюда.
         choice = input(f"{lang['remove_item']}")
         # Получаем ввод от пользователя.
@@ -360,8 +361,8 @@ def change_order(order, lang, selected_language):
             # Если ввод является цифрой и находится в пределах доступных вариантов,
             del order[int(choice) - 1]
             # Удаляем выбранный элемент из заказа.
-        elif choice == "a":
-            # Если пользователь ввел "a" вызываем функцию `start_order` для добавления блюда
+        elif choice == "5":
+            # Если пользователь ввел "2" вызываем функцию `start_order` для добавления блюда
             start_order(selected_language, order)
         else:
             # Если ввод не соответствует ни одному из условий, выводим сообщение об ошибке.
