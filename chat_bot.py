@@ -174,7 +174,7 @@ def choose_language():
     print("Choose a language / Выберите язык / Wählen Sie eine Sprache:")
     print("1. English\n2. Русский\n3. Deutsch")
     while True:
-        choice = 1#input("Enter your choice: ")
+        choice = input("Enter your choice: ")
         if choice == "1":
             return "en"
         elif choice == "2":
@@ -214,7 +214,7 @@ def choose_item(items, category_name, lang, selected_language, show_back=True):
             print(f"9. {lang['exit']}")
 
         # Получаем ввод от пользователя
-        choice = 1#input(f"{lang['choose_dish']} ")
+        choice = input(f"{lang['choose_dish']} ")
 
         # Проверяем ввод пользователя
         if choice == "0":
@@ -260,7 +260,7 @@ def choose_extras(extras, lang, selected_language, max_extras=0):
             print(f"{i}. {extra['name'][selected_language]} (+{extra['price']:.2f}€)")
         print(f"0. {lang['exit']}")
 
-        choice = 1#input(f"{lang['your_choice']}")
+        choice = input(f"{lang['your_choice']}")
 
         if choice == "0":
             break
@@ -303,7 +303,7 @@ def change_order(order, lang, selected_language):
             print(f"{i}. {item['name']}")
         print(f"0. {lang['exit']}")
         print(f"a. {lang['add_item']}")
-        choice = 1#input(f"{lang['remove_item']}")
+        choice = input(f"{lang['remove_item']}")
         if choice == "0":
             break
         elif choice.isdigit() and 1 <= int(choice) <= len(order):
