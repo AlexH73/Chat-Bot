@@ -1,130 +1,952 @@
-first_dish_name = ""  # pizza, pasta or steak
-first_dish_price = 0  # price for pizza/pasta/steak
-first_dish_extra_name = ""  # additionals for first dish
-first_dish_extra_price = 0  # price for extras
+# ------- Константы цен -------
+# Цены для пиццы
+PIZZA_PRICE = 10.00  # Цена за пиццу
+PIZZA_CHEESE_PRICE = 1.50  # Цена за добавку сыра
+PIZZA_BACON_PRICE = 2.00  # Цена за добавку бекона
+PIZZA_SAUCE_PRICE = 1.00  # Цена за добавку острого соуса
 
-tsalad_name = ""
-salad_extra_name = ""
-salad_extra_price = 0
-salad_price = 0
-drik_name = ""
-drink_price = 0
-drink_extra_name = ""
-drink_extra_price = 0
+# Цены для пасты
+PASTA_PRICE = 8.00  # Цена за пасту
+PASTA_CHEESE_PRICE = 1.00  # Цена за добавку сыра
+PASTA_BACON_PRICE = 1.50  # Цена за добавку бекона
+PASTA_MUSHROOMS_PRICE = 1.00  # Цена за добавку грибов
+
+# Цены для стейка
+STEAK_PRICE = 15.00  # Цена за стейк
+STEAK_SAUCE_PRICE = 2.00  # Цена за добавку соуса
+STEAK_MUSHROOMS_PRICE = 1.50  # Цена за добавку грибов
+STEAK_POTATOES_PRICE = 1.00  # Цена за добавку картофеля
+
+# Цены для салата Цезарь
+CESAR_PRICE = 7.00  # Цена за салат Цезарь
+CESAR_CHICKEN_PRICE = 2.00  # Цена за добавку курицы
+CESAR_BACON_PRICE = 1.50  # Цена за добавку бекона
+CESAR_CHEESE_PRICE = 1.00  # Цена за добавку сыра
+
+# Цены для греческого салата
+GREEK_PRICE = 6.00  # Цена за греческий салат
+GREEK_OLIVES_PRICE = 1.00  # Цена за добавку оливок
+GREEK_CHEESE_PRICE = 1.50  # Цена за добавку сыра
+GREEK_PEPPERS_PRICE = 1.00  # Цена за добавку перца
+
+# Цены для салата с тунцом
+TUNA_PRICE = 8.00  # Цена за салат с тунцом
+TUNA_OLIVES_PRICE = 1.50  # Цена за добавку оливок
+TUNA_CAPERS_PRICE = 1.00  # Цена за добавку каперсов
+TUNA_EGG_PRICE = 1.00  # Цена за добавку яйца
+
+# Цены для чизкейка
+CHEESECAKE_PRICE = 5.00  # Цена за чизкейк
+CHEESECAKE_BERRIES_PRICE = 1.50  # Цена за добавку ягод
+CHEESECAKE_CHOCOLATE_PRICE = 1.00  # Цена за добавку шоколада
+CHEESECAKE_CARAMEL_PRICE = 1.00  # Цена за добавку карамели
+
+# Цены для маффина
+MUFFIN_PRICE = 4.00  # Цена за маффин
+MUFFIN_BERRIES_PRICE = 1.00  # Цена за добавку ягод
+MUFFIN_CHOCOLATE_PRICE = 1.50  # Цена за добавку шоколада
+MUFFIN_NUTS_PRICE = 1.00  # Цена за добавку орехов
+
+# Цены для тирамису
+TIRAMISU_PRICE = 6.00  # Цена за тирамису
+TIRAMISU_COCOA_PRICE = 1.00  # Цена за добавку какао
+TIRAMISU_CHOCOLATE_PRICE = 1.50  # Цена за добавку шоколада
+TIRAMISU_COFFEE_PRICE = 1.00  # Цена за добавку кофе
+
+# Цены для кофе
+COFFEE_PRICE = 3.00  # Цена за кофе
+COFFEE_MILK_PRICE = 0.50  # Цена за добавку молока
+COFFEE_SUGAR_PRICE = 0.50  # Цена за добавку сахара
+COFFEE_SYRUP_PRICE = 1.00  # Цена за добавку сиропа
+
+# Цены для чая
+TEA_PRICE = 2.50  # Цена за чай
+TEA_LEMON_PRICE = 0.50  # Цена за добавку лимона
+TEA_MINT_PRICE = 0.50  # Цена за добавку мяты
+TEA_HONEY_PRICE = 1.00  # Цена за добавку меда
+
+# Цены для лимонада
+LEMONADE_PRICE = 3.50  # Цена за лимонад
+LEMONADE_MINT_PRICE = 0.50  # Цена за добавку мяты
+LEMONADE_BERRIES_PRICE = 1.00  # Цена за добавку ягод
+LEMONADE_SYRUP_PRICE = 1.00  # Цена за добавку сиропа
+
+# ------- Глобальные переменные для хранения информации о заказе -------
+first_dish_name = ""  # Название основного блюда
+first_dish_price = 0  # Цена основного блюда
+first_dish_extra_name = ""  # Название добавки к основному блюду
+first_dish_extra_price = 0  # Цена добавки к основному блюду
+
+salad_name = ""  # Название салата
+salad_price = 0  # Цена салата
+salad_extra_name = ""  # Название добавки к салату
+salad_extra_price = 0  # Цена добавки к салату
+
+dessert_name = ""  # Название десерта
+dessert_price = 0  # Цена десерта
+dessert_extra_name = ""  # Название добавки к десерту
+dessert_extra_price = 0  # Цена добавки к десерту
+
+drink_name = ""  # Название напитка
+drink_price = 0  # Цена напитка
+drink_extra_name = ""  # Название добавки к напитку
+drink_extra_price = 0  # Цена добавки к напитку
 
 
-# sweets...
-
+# ------- Функция для подсчета общей стоимости заказа -------
 def count_total_price():
-    total_price = first_dish_price + first_dish_extra_price + salad_price + salad_extra_price + drink_price + drink_extra_price
-    return total_price
+    """
+    Подсчитывает общую стоимость заказа, суммируя цены блюд и их добавок.
+
+    Returns:
+         float: Общая стоимость заказа.
+    """
+    total_price = 0  # Инициализируем общую цену
+    total_price += first_dish_price + first_dish_extra_price  # Добавляем цену основного блюда и его добавки
+    total_price += salad_price + salad_extra_price  # Добавляем цену салата и его добавки
+    total_price += dessert_price + dessert_extra_price  # Добавляем цену десерта и его добавки
+    total_price += drink_price + drink_extra_price  # Добавляем цену напитка и его добавки
+    return total_price  # Возвращаем общую стоимость
 
 
-def start_order():
-    print("Привет! Я помогу вам оформить заказ. Давайте начнем с выбора основного блюда.")
-    # Начинаем бесконечный цикл для обработки выбора добавки к греческому салату
-
-    while True:
-        print(
-            "1. Выбор основного блюда\n"
-            "2. Выбор салат\n"
-            "3. Выбор десерта\n"
-            "4. Выбор напитка\n"
-            "0. Выход\n"
-        )
-
-        main_course_choice = input() # не работает в онлайн IDE
-        #main_course_choice = "1"
-
-        if main_course_choice == "1":
-            # вызов метода, в котором будет происходить выбор основного блюда
-            # написать новый метод и вызвать его отсюда
-            first_dish_chooser()
-
-            #  ...
-        elif main_course_choice == "2":
-        # ...
-            continue
-        elif main_course_choice == "3":
-        # ...
-            continue
-        elif main_course_choice == "4":
-        # ...
-            continue
-        elif main_course_choice == "0":
-            print("Вы хотите что-то изменить? 1. Да  / 2.Нет")
-            final_order = "2"
-            if final_order == 1:
-                continue
-            else:
-                break
-        else:
-            print("Не корректное значение")
-            continue
-
-    # после выбора "0" в цикле мы окажемся тут. Какой дальнейший шаг?
-    print("что было заказано и сколько стоит -> оплата? да/нет -> ")
-    # complete_order = input() # не работает в онлайн IDE
-    complete_order = "1"
-    if complete_order == "1":
-        print("спасибо, ожидайте заказ")
-    else:
-        print("до свидания!")
-
-
-# метод который нужен для оформления заказа основного блюда:
+# ------- Функции выбора основных блюд -------
 def first_dish_chooser():
-    print("Sie haben nummer 1 gewählt , sie haben noch folgende optionen\n : "
-          "1. Пицца\n"
-          "2. Паста\n"
-          "3. Стейк\n"
-          "0. Выход\n"
-          )
-    first_dish_choise = input() # не работает в онлайн IDE
-    #first_dish_choise = "1"
+    """
+    Позволяет пользователю выбрать основное блюдо из меню.
+    Вызывает соответствующие функции для выбора конкретного блюда.
+    """
+    while True:  # Бесконечный цикл до тех пор, пока не будет сделан корректный выбор
+        print(
+            "Выберите основное блюдо:\n"
+            "0. Вернуться назад\n"
+            "1. Пицца\n"
+            "2. Паста\n"
+            "3. Стейк\n"
+        )  # Выводим меню основных блюд
+        first_dish_choice = input()  # Получаем выбор пользователя
+        if first_dish_choice == "1":  # Если выбран пункт 1 (Пицца)
+            pizza_chooser()  # Вызываем функцию выбора пиццы
+            break  # Выходим из цикла
+        elif first_dish_choice == "2":  # Если выбран пункт 2 (Паста)
+            pasta_chooser()  # Вызываем функцию выбора пасты
+            break  # Выходим из цикла
+        elif first_dish_choice == "3":  # Если выбран пункт 3 (Стейк)
+            steak_chooser()  # Вызываем функцию выбора стейка
+            break  # Выходим из цикла
+        elif first_dish_choice == "0":  # Если выбран пункт 0 (Вернуться назад)
+            start_order()  # Возвращаемся к началу заказа
+            break  # Выходим из цикла
+        else:
+            print("Некорректное значение")  # Выводим сообщение об ошибке при некорректном вводе
 
-    if first_dish_choise == "1":
-        first_dish_name = "Пицца"
-        first_dish_price = 8.00
-        pizza_extras_chooser()
 
-    elif first_dish_choise == "2":
-        first_dish_name = "Паста"
-        first_dish_price = 7.50
-        # ...
-    elif first_dish_choise == "3":
-        first_dish_name = "Стейк"
-        first_dish_price = 15.00
-        # ...
-    elif first_dish_choise == "0":
-        start_order()
-    else:
-        print("Не корректное значение")
+def pizza_chooser():
+    """
+    Устанавливает название и цену для пиццы, вызывает функцию выбора добавок.
+    """
+    global first_dish_name, first_dish_price  # Используем глобальные переменные для сохранения данных о блюде
+    first_dish_name = "Пицца"  # Устанавливаем название блюда
+    first_dish_price = PIZZA_PRICE  # Устанавливаем цену блюда
+    pizza_extras_chooser()  # Вызываем функцию выбора добавок для пиццы
 
 
+def pasta_chooser():
+    """
+    Устанавливает название и цену для пасты, вызывает функцию выбора добавок.
+    """
+    global first_dish_name, first_dish_price  # Используем глобальные переменные для сохранения данных о блюде
+    first_dish_name = "Паста"  # Устанавливаем название блюда
+    first_dish_price = PASTA_PRICE  # Устанавливаем цену блюда
+    pasta_extras_chooser()  # Вызываем функцию выбора добавок для пасты
+
+
+def steak_chooser():
+    """
+    Устанавливает название и цену для стейка, вызывает функцию выбора добавок.
+    """
+    global first_dish_name, first_dish_price  # Используем глобальные переменные для сохранения данных о блюде
+    first_dish_name = "Стейк"  # Устанавливаем название блюда
+    first_dish_price = STEAK_PRICE  # Устанавливаем цену блюда
+    steak_extras_chooser()  # Вызываем функцию выбора добавок для стейка
+
+
+# ------- Функции выбора добавок для основных блюд -------
 def pizza_extras_chooser():
-    print("Sie haben nummer 1 gewählt , sie haben noch folgende optionen\n : "
-          "1. Kaese\n"
-          "2. Bekon\n"
-          "3. Spicy sauce\n"
-          "0. Выход\n"
-          )
-    pizza_extras_chooser = input() # не работает в онлайн IDE
-    #pizza_extras_chooser = ""
+    """
+    Позволяет пользователю выбрать добавки для пиццы.
+    Выводит меню добавок и устанавливает выбранную добавку и ее цену.
+    """
+    while True:  # Бесконечный цикл до тех пор, пока не будет сделан корректный выбор
+        print(
+            "Выберите добавку для пиццы:\n"
+            "0. Пропустить\n"
+            "1. Сыр (+{:.2f}€)\n".format(PIZZA_CHEESE_PRICE),
+            "2. Бекон (+{:.2f}€)\n".format(PIZZA_BACON_PRICE),
+            "3. Острый соус (+{:.2f}€)\n".format(PIZZA_SAUCE_PRICE),
+            "4. Вернуться назад\n"
+        )  # Выводим меню добавок для пиццы
+        pizza_extras_choice = input()  # Получаем выбор пользователя
 
-    if pizza_extras_chooser == "1":
-        first_dish_extra_name = "Kaese"
-        first_dish_extra_price = 1.50
+        if pizza_extras_choice == "1":  # Если выбран пункт 1 (Сыр)
+            global first_dish_extra_name, first_dish_extra_price  # Используем глобальные переменные для сохранения данных о добавке
+            first_dish_extra_name = "Сыр"  # Устанавливаем название добавки
+            first_dish_extra_price = PIZZA_CHEESE_PRICE  # Устанавливаем цену добавки
+            break  # Выходим из цикла
+        elif pizza_extras_choice == "2":  # Если выбран пункт 2 (Бекон)
+            first_dish_extra_name = "Бекон"  # Устанавливаем название добавки
+            first_dish_extra_price = PIZZA_BACON_PRICE  # Устанавливаем цену добавки
+            break  # Выходим из цикла
+        elif pizza_extras_choice == "3":  # Если выбран пункт 3 (Острый соус)
+            first_dish_extra_name = "Острый соус"  # Устанавливаем название добавки
+            first_dish_extra_price = PIZZA_SAUCE_PRICE  # Устанавливаем цену добавки
+            break  # Выходим из цикла
+        elif pizza_extras_choice == "0":  # Если выбран пункт 0 (Пропустить)
+            print("Добавки для пиццы пропущены.")  # Выводим сообщение о пропуске добавок
+            start_order()  # Возвращаемся к началу заказа
+            break  # Выходим из цикла
+        elif pizza_extras_choice == "4":  # Если выбран пункт 4 (Вернуться назад)
+            start_order()  # Возвращаемся к началу заказа
+            break  # Выходим из цикла
+        else:
+            print("Некорректное значение")  # Выводим сообщение об ошибке при некорректном вводе
 
-    elif pizza_extras_chooser == "2":
-        first_dish_extra_name = "Bekon"
-        first_dish_extra_price = 2.00
 
-    elif pizza_extras_chooser == "3":
-        first_dish_extra_name = "Spicy sauce"
-        first_dish_extra_price = 1.00
+def pasta_extras_chooser():
+    """
+    Позволяет пользователю выбрать добавки для пасты.
+    Выводит меню добавок и устанавливает выбранную добавку и ее цену.
+    """
+    while True:  # Бесконечный цикл до тех пор, пока не будет сделан корректный выбор
+        print(
+            "Выберите добавку для пасты:\n"
+            "0. Пропустить\n"
+            "1. Сыр (+{:.2f}€)\n".format(PASTA_CHEESE_PRICE),
+            "2. Бекон (+{:.2f}€)\n".format(PASTA_BACON_PRICE),
+            "3. Грибы (+{:.2f}€)\n".format(PASTA_MUSHROOMS_PRICE),
+            "4. Вернуться назад\n"
+        )  # Выводим меню добавок для пасты
+        pasta_extras_choice = input()  # Получаем выбор пользователя
 
-    elif pizza_extras_chooser == "0":
-        return
-    else:
-        print("Не корректное значение")
+        if pasta_extras_choice == "1":  # Если выбран пункт 1 (Сыр)
+            global first_dish_extra_name, first_dish_extra_price  # Используем глобальные переменные для сохранения данных о добавке
+            first_dish_extra_name = "Сыр"  # Устанавливаем название добавки
+            first_dish_extra_price = PASTA_CHEESE_PRICE  # Устанавливаем цену добавки
+            break  # Выходим из цикла
+        elif pasta_extras_choice == "2":  # Если выбран пункт 2 (Бекон)
+            first_dish_extra_name = "Бекон"  # Устанавливаем название добавки
+            first_dish_extra_price = PASTA_BACON_PRICE  # Устанавливаем цену добавки
+            break  # Выходим из цикла
+        elif pasta_extras_choice == "3":  # Если выбран пункт 3 (Грибы)
+            first_dish_extra_name = "Грибы"  # Устанавливаем название добавки
+            first_dish_extra_price = PASTA_MUSHROOMS_PRICE  # Устанавливаем цену добавки
+            break  # Выходим из цикла
+        elif pasta_extras_choice == "0":  # Если выбран пункт 0 (Пропустить)
+            print("Добавки для пасты пропущены.")  # Выводим сообщение о пропуске добавок
+            start_order()  # Возвращаемся к началу заказа
+            break  # Выходим из цикла
+        elif pasta_extras_choice == "4":  # Если выбран пункт 4 (Вернуться назад)
+            start_order()  # Возвращаемся к началу заказа
+            break  # Выходим из цикла
+        else:
+            print("Некорректное значение")  # Выводим сообщение об ошибке при некорректном вводе
+
+
+def steak_extras_chooser():
+    """
+    Позволяет пользователю выбрать добавки для стейка.
+    Выводит меню добавок и устанавливает выбранную добавку и ее цену.
+    """
+    while True:  # Бесконечный цикл до тех пор, пока не будет сделан корректный выбор
+        print(
+            "Выберите добавку для стейка:\n"
+            "0. Пропустить\n"
+            "1. Соус (+{:.2f}€)\n".format(STEAK_SAUCE_PRICE),
+            "2. Грибы (+{:.2f}€)\n".format(STEAK_MUSHROOMS_PRICE),
+            "3. Картофель (+{:.2f}€)\n".format(STEAK_POTATOES_PRICE),
+            "4. Вернуться назад\n"
+        )  # Выводим меню добавок для стейка
+        steak_extras_choice = input("\n")  # Получаем выбор пользователя
+
+        if steak_extras_choice == "1":  # Если выбран пункт 1 (Соус)
+            global first_dish_extra_name, first_dish_extra_price  # Используем глобальные переменные для сохранения данных о добавке
+            first_dish_extra_name = "Соус"  # Устанавливаем название добавки
+            first_dish_extra_price = STEAK_SAUCE_PRICE  # Устанавливаем цену добавки
+            break  # Выходим из цикла
+        elif steak_extras_choice == "2":  # Если выбран пункт 2 (Грибы)
+            first_dish_extra_name = "Грибы"  # Устанавливаем название добавки
+            first_dish_extra_price = STEAK_MUSHROOMS_PRICE  # Устанавливаем цену добавки
+            break  # Выходим из цикла
+        elif steak_extras_choice == "3":  # Если выбран пункт 3 (Картофель)
+            first_dish_extra_name = "Картофель"  # Устанавливаем название добавки
+            first_dish_extra_price = STEAK_POTATOES_PRICE  # Устанавливаем цену добавки
+            break  # Выходим из цикла
+        elif steak_extras_choice == "0":  # Если выбран пункт 0 (Пропустить)
+            print("Добавки для стейка пропущены.")  # Выводим сообщение о пропуске добавок
+            start_order()  # Возвращаемся к началу заказа
+            break  # Выходим из цикла
+        elif steak_extras_choice == "4":  # Если выбран пункт 4 (Вернуться назад)
+            start_order()  # Возвращаемся к началу заказа
+            break  # Выходим из цикла
+        else:
+            print("Некорректное значение")  # Выводим сообщение об ошибке при некорректном вводе
+
+
+# ------- Функции выбора салатов -------
+def salad_chooser():
+    """
+    Позволяет пользователю выбрать салат из меню.
+    Вызывает соответствующие функции для выбора конкретного салата.
+    """
+    while True:  # Бесконечный цикл до тех пор, пока не будет сделан корректный выбор
+        print(
+            "Выберите салат:\n"
+            "0. Вернуться назад\n"
+            "1. Цезарь\n"
+            "2. Греческий\n"
+            "3. С тунцом\n"
+        )  # Выводим меню салатов
+        salad_choice = input()  # Получаем выбор пользователя
+        if salad_choice == "1":  # Если выбран пункт 1 (Цезарь)
+            cesar_chooser()  # Вызываем функцию выбора салата Цезарь
+            break  # Выходим из цикла
+        elif salad_choice == "2":  # Если выбран пункт 2 (Греческий)
+            greek_chooser()  # Вызываем функцию выбора греческого салата
+            break  # Выходим из цикла
+        elif salad_choice == "3":  # Если выбран пункт 3 (С тунцом)
+            tuna_chooser()  # Вызываем функцию выбора салата с тунцом
+            break  # Выходим из цикла
+        elif salad_choice == "0":  # Если выбран пункт 0 (Вернуться назад)
+            start_order()  # Возвращаемся к началу заказа
+            break  # Выходим из цикла
+        else:
+            print("Некорректное значение")  # Выводим сообщение об ошибке при некорректном вводе
+
+
+def cesar_chooser():
+    """
+    Устанавливает название и цену для салата Цезарь, вызывает функцию выбора добавок.
+    """
+    global salad_name, salad_price  # Используем глобальные переменные для сохранения данных о блюде
+    salad_name = "Цезарь"  # Устанавливаем название салата
+    salad_price = CESAR_PRICE  # Устанавливаем цену салата
+    cesar_extras_chooser()  # Вызываем функцию выбора добавок для салата Цезарь
+
+
+def greek_chooser():
+    """
+    Устанавливает название и цену для греческого салата, вызывает функцию выбора добавок.
+    """
+    global salad_name, salad_price  # Используем глобальные переменные для сохранения данных о блюде
+    salad_name = "Греческий"  # Устанавливаем название салата
+    salad_price = GREEK_PRICE  # Устанавливаем цену салата
+    greek_extras_chooser()  # Вызываем функцию выбора добавок для греческого салата
+
+
+def tuna_chooser():
+    """
+    Устанавливает название и цену для салата с тунцом, вызывает функцию выбора добавок.
+    """
+    global salad_name, salad_price  # Используем глобальные переменные для сохранения данных о блюде
+    salad_name = "С тунцом"  # Устанавливаем название салата
+    salad_price = TUNA_PRICE  # Устанавливаем цену салата
+    tuna_extras_chooser()  # Вызываем функцию выбора добавок для салата с тунцом
+
+
+# ------- Функции выбора добавок для салатов -------
+def cesar_extras_chooser():
+    """
+    Позволяет пользователю выбрать добавки для салата Цезарь.
+    Выводит меню добавок и устанавливает выбранную добавку и ее цену.
+    """
+    while True:  # Бесконечный цикл до тех пор, пока не будет сделан корректный выбор
+        print(
+            "Выберите добавку для салата Цезарь:\n"
+            "0. Пропустить\n"
+            "1. Курица (+{:.2f}€)\n".format(CESAR_CHICKEN_PRICE),
+            "2. Бекон (+{:.2f}€)\n".format(CESAR_BACON_PRICE),
+            "3. Сыр (+{:.2f}€)\n".format(CESAR_CHEESE_PRICE),
+            "4. Вернуться назад\n"
+        )  # Выводим меню добавок для салата Цезарь
+        cesar_extras_choice = input("\n")  # Получаем выбор пользователя
+
+        if cesar_extras_choice == "1":  # Если выбран пункт 1 (Курица)
+            global salad_extra_name, salad_extra_price  # Используем глобальные переменные для сохранения данных о добавке
+            salad_extra_name = "Курица"  # Устанавливаем название добавки
+            salad_extra_price = CESAR_CHICKEN_PRICE  # Устанавливаем цену добавки
+            break  # Выходим из цикла
+        elif cesar_extras_choice == "2":  # Если выбран пункт 2 (Бекон)
+            salad_extra_name = "Бекон"  # Устанавливаем название добавки
+            salad_extra_price = CESAR_BACON_PRICE  # Устанавливаем цену добавки
+            break  # Выходим из цикла
+        elif cesar_extras_choice == "3":  # Если выбран пункт 3 (Сыр)
+            salad_extra_name = "Сыр"  # Устанавливаем название добавки
+            salad_extra_price = CESAR_CHEESE_PRICE  # Устанавливаем цену добавки
+            break  # Выходим из цикла
+        elif cesar_extras_choice == "0":  # Если выбран пункт 0 (Пропустить)
+            print("Добавки для салата Цезарь пропущены.")  # Выводим сообщение о пропуске добавок
+            start_order()  # Возвращаемся к началу заказа
+            break  # Выходим из цикла
+        elif cesar_extras_choice == "4":  # Если выбран пункт 4 (Вернуться назад)
+            start_order()  # Возвращаемся к началу заказа
+            break  # Выходим из цикла
+        else:
+            print("Некорректное значение")  # Выводим сообщение об ошибке при некорректном вводе
+
+
+def greek_extras_chooser():
+    """
+    Позволяет пользователю выбрать добавки для греческого салата.
+    Выводит меню добавок и устанавливает выбранную добавку и ее цену.
+    """
+    while True:  # Бесконечный цикл до тех пор, пока не будет сделан корректный выбор
+        print(
+            "Выберите добавку для греческого салата:\n"
+            "0. Пропустить\n"
+            "1. Оливки (+{:.2f}€)\n".format(GREEK_OLIVES_PRICE),
+            "2. Сыр (+{:.2f}€)\n".format(GREEK_CHEESE_PRICE),
+            "3. Перец (+{:.2f}€)\n".format(GREEK_PEPPERS_PRICE),
+            "4. Вернуться назад\n"
+        )  # Выводим меню добавок для греческого салата
+        greek_extras_choice = input("\n")  # Получаем выбор пользователя
+
+        if greek_extras_choice == "1":  # Если выбран пункт 1 (Оливки)
+            global salad_extra_name, salad_extra_price  # Используем глобальные переменные для сохранения данных о добавке
+            salad_extra_name = "Оливки"  # Устанавливаем название добавки
+            salad_extra_price = GREEK_OLIVES_PRICE  # Устанавливаем цену добавки
+            break  # Выходим из цикла
+        elif greek_extras_choice == "2":  # Если выбран пункт 2 (Сыр)
+            salad_extra_name = "Сыр"  # Устанавливаем название добавки
+            salad_extra_price = GREEK_CHEESE_PRICE  # Устанавливаем цену добавки
+            break  # Выходим из цикла
+        elif greek_extras_choice == "3":  # Если выбран пункт 3 (Перец)
+            salad_extra_name = "Перец"  # Устанавливаем название добавки
+            salad_extra_price = GREEK_PEPPERS_PRICE  # Устанавливаем цену добавки
+            break  # Выходим из цикла
+        elif greek_extras_choice == "0":  # Если выбран пункт 0 (Пропустить)
+            print("Добавки для греческого салата пропущены.")  # Выводим сообщение о пропуске добавок
+            start_order()  # Возвращаемся к началу заказа
+            break  # Выходим из цикла
+        elif greek_extras_choice == "4":  # Если выбран пункт 4 (Вернуться назад)
+            start_order()  # Возвращаемся к началу заказа
+            break  # Выходим из цикла
+        else:
+            print("Некорректное значение")  # Выводим сообщение об ошибке при некорректном вводе
+
+
+def tuna_extras_chooser():
+    """
+    Позволяет пользователю выбрать добавки для салата с тунцом.
+    Выводит меню добавок и устанавливает выбранную добавку и ее цену.
+    """
+    while True:  # Бесконечный цикл до тех пор, пока не будет сделан корректный выбор
+        print(
+            "Выберите добавку для салата с тунцом:\n"
+            "0. Пропустить\n"
+            "1. Оливки (+{:.2f}€)\n".format(TUNA_OLIVES_PRICE),
+            "2. Каперсы (+{:.2f}€)\n".format(TUNA_CAPERS_PRICE),
+            "3. Яйцо (+{:.2f}€)\n".format(TUNA_EGG_PRICE),
+            "4. Вернуться назад\n"
+        )  # Выводим меню добавок для салата с тунцом
+        tuna_extras_choice = input("\n")  # Получаем выбор пользователя
+
+        if tuna_extras_choice == "1":  # Если выбран пункт 1 (Оливки)
+            global salad_extra_name, salad_extra_price  # Используем глобальные переменные для сохранения данных о добавке
+            salad_extra_name = "Оливки"  # Устанавливаем название добавки
+            salad_extra_price = TUNA_OLIVES_PRICE  # Устанавливаем цену добавки
+            break  # Выходим из цикла
+        elif tuna_extras_choice == "2":  # Если выбран пункт 2 (Каперсы)
+            salad_extra_name = "Каперсы"  # Устанавливаем название добавки
+            salad_extra_price = TUNA_CAPERS_PRICE  # Устанавливаем цену добавки
+            break  # Выходим из цикла
+        elif tuna_extras_choice == "3":  # Если выбран пункт 3 (Яйцо)
+            salad_extra_name = "Яйцо"  # Устанавливаем название добавки
+            salad_extra_price = TUNA_EGG_PRICE  # Устанавливаем цену добавки
+            break  # Выходим из цикла
+        elif tuna_extras_choice == "0":  # Если выбран пункт 0 (Пропустить)
+            print("Добавки для салата с тунцом пропущены.")  # Выводим сообщение о пропуске добавок
+            start_order()  # Возвращаемся к началу заказа
+            break  # Выходим из цикла
+        elif tuna_extras_choice == "4":  # Если выбран пункт 4 (Вернуться назад)
+            start_order()  # Возвращаемся к началу заказа
+            break  # Выходим из цикла
+        else:
+            print("Некорректное значение")  # Выводим сообщение об ошибке при некорректном вводе
+
+
+# ------- Функции выбора десертов -------
+def dessert_chooser():
+    """
+    Позволяет пользователю выбрать десерт из меню.
+    Вызывает соответствующие функции для выбора конкретного десерта.
+    """
+    while True:  # Бесконечный цикл до тех пор, пока не будет сделан корректный выбор
+        print(
+            "Выберите десерт:\n"
+            "0. Вернуться назад\n"
+            "1. Чизкейк\n"
+            "2. Маффин\n"
+            "3. Тирамису\n"
+        )  # Выводим меню десертов
+        dessert_choice = input("\n")  # Получаем выбор пользователя
+
+        if dessert_choice == "1":  # Если выбран пункт 1 (Чизкейк)
+            cheesecake_chooser()  # Вызываем функцию выбора чизкейка
+            break  # Выходим из цикла
+        elif dessert_choice == "2":  # Если выбран пункт 2 (Маффин)
+            muffin_chooser()  # Вызываем функцию выбора маффина
+            break  # Выходим из цикла
+        elif dessert_choice == "3":  # Если выбран пункт 3 (Тирамису)
+            tiramisu_chooser()  # Вызываем функцию выбора тирамису
+            break  # Выходим из цикла
+        elif dessert_choice == "0":  # Если выбран пункт 0 (Вернуться назад)
+            start_order()  # Возвращаемся к началу заказа
+            break  # Выходим из цикла
+        else:
+            print("Некорректное значение")  # Выводим сообщение об ошибке при некорректном вводе
+
+
+def cheesecake_chooser():
+    """
+    Устанавливает название и цену для чизкейка, вызывает функцию выбора добавок.
+    """
+    global dessert_name, dessert_price  # Используем глобальные переменные для сохранения данных о блюде
+    dessert_name = "Чизкейк"  # Устанавливаем название десерта
+    dessert_price = CHEESECAKE_PRICE  # Устанавливаем цену десерта
+    cheesecake_extras_chooser()  # Вызываем функцию выбора добавок для чизкейка
+
+
+def muffin_chooser():
+    """
+    Устанавливает название и цену для маффина, вызывает функцию выбора добавок.
+    """
+    global dessert_name, dessert_price  # Используем глобальные переменные для сохранения данных о блюде
+    dessert_name = "Маффин"  # Устанавливаем название десерта
+    dessert_price = MUFFIN_PRICE  # Устанавливаем цену десерта
+    muffin_extras_chooser()  # Вызываем функцию выбора добавок для маффина
+
+
+def tiramisu_chooser():
+    """
+    Устанавливает название и цену для тирамису, вызывает функцию выбора добавок.
+    """
+    global dessert_name, dessert_price  # Используем глобальные переменные для сохранения данных о блюде
+    dessert_name = "Тирамису"  # Устанавливаем название десерта
+    dessert_price = TIRAMISU_PRICE  # Устанавливаем цену десерта
+    tiramisu_extras_chooser()  # Вызываем функцию выбора добавок для тирамису
+
+
+# ------- Функции выбора добавок для десертов -------
+def cheesecake_extras_chooser():
+    """
+    Позволяет пользователю выбрать добавки для чизкейка.
+    Выводит меню добавок и устанавливает выбранную добавку и ее цену.
+    """
+    while True:  # Бесконечный цикл до тех пор, пока не будет сделан корректный выбор
+        print(
+            "Выберите добавку для чизкейка:\n"
+            "0. Пропустить\n"
+            "1. Ягоды (+{:.2f}€)\n".format(CHEESECAKE_BERRIES_PRICE),
+            "2. Шоколад (+{:.2f}€)\n".format(CHEESECAKE_CHOCOLATE_PRICE),
+            "3. Карамель (+{:.2f}€)\n".format(CHEESECAKE_CARAMEL_PRICE),
+            "4. Вернуться назад\n"
+        )  # Выводим меню добавок для чизкейка
+        cheesecake_extras_choice = input("\n")  # Получаем выбор пользователя
+
+        if cheesecake_extras_choice == "1":  # Если выбран пункт 1 (Ягоды)
+            global dessert_extra_name, dessert_extra_price  # Используем глобальные переменные для сохранения данных о добавке
+            dessert_extra_name = "Ягоды"  # Устанавливаем название добавки
+            dessert_extra_price = CHEESECAKE_BERRIES_PRICE  # Устанавливаем цену добавки
+            break  # Выходим из цикла
+        elif cheesecake_extras_choice == "2":  # Если выбран пункт 2 (Шоколад)
+            dessert_extra_name = "Шоколад"  # Устанавливаем название добавки
+            dessert_extra_price = CHEESECAKE_CHOCOLATE_PRICE  # Устанавливаем цену добавки
+            break  # Выходим из цикла
+        elif cheesecake_extras_choice == "3":  # Если выбран пункт 3 (Карамель)
+            dessert_extra_name = "Карамель"  # Устанавливаем название добавки
+            dessert_extra_price = CHEESECAKE_CARAMEL_PRICE  # Устанавливаем цену добавки
+            break  # Выходим из цикла
+        elif cheesecake_extras_choice == "0":  # Если выбран пункт 0 (Пропустить)
+            print("Добавки для чизкейка пропущены.")  # Выводим сообщение о пропуске добавок
+            start_order()  # Возвращаемся к началу заказа
+            break  # Выходим из цикла
+        elif cheesecake_extras_choice == "4":  # Если выбран пункт 4 (Вернуться назад)
+            start_order()  # Возвращаемся к началу заказа
+            break  # Выходим из цикла
+        else:
+            print("Некорректное значение")  # Выводим сообщение об ошибке при некорректном вводе
+
+
+def muffin_extras_chooser():
+    """
+    Позволяет пользователю выбрать добавки для маффина.
+    Выводит меню добавок и устанавливает выбранную добавку и ее цену.
+    """
+    while True:  # Бесконечный цикл до тех пор, пока не будет сделан корректный выбор
+        print(
+            "Выберите добавку для маффина:\n"
+            "0. Пропустить\n"
+            "1. Ягоды (+{:.2f}€)\n".format(MUFFIN_BERRIES_PRICE),
+            "2. Шоколад (+{:.2f}€)\n".format(MUFFIN_CHOCOLATE_PRICE),
+            "3. Орехи (+{:.2f}€)\n".format(MUFFIN_NUTS_PRICE),
+            "4. Вернуться назад\n"
+        )  # Выводим меню добавок для маффина
+        muffin_extras_choice = input("\n")  # Получаем выбор пользователя
+
+        if muffin_extras_choice == "1":  # Если выбран пункт 1 (Ягоды)
+            global dessert_extra_name, dessert_extra_price  # Используем глобальные переменные для сохранения данных о добавке
+            dessert_extra_name = "Ягоды"  # Устанавливаем название добавки
+            dessert_extra_price = MUFFIN_BERRIES_PRICE  # Устанавливаем цену добавки
+            break  # Выходим из цикла
+        elif muffin_extras_choice == "2":  # Если выбран пункт 2 (Шоколад)
+            dessert_extra_name = "Шоколад"  # Устанавливаем название добавки
+            dessert_extra_price = MUFFIN_CHOCOLATE_PRICE  # Устанавливаем цену добавки
+            break  # Выходим из цикла
+        elif muffin_extras_choice == "3":  # Если выбран пункт 3 (Орехи)
+            dessert_extra_name = "Орехи"  # Устанавливаем название добавки
+            dessert_extra_price = MUFFIN_NUTS_PRICE  # Устанавливаем цену добавки
+            break  # Выходим из цикла
+        elif muffin_extras_choice == "0":  # Если выбран пункт 0 (Пропустить)
+            print("Добавки для маффина пропущены.")  # Выводим сообщение о пропуске добавок
+            start_order()  # Возвращаемся к началу заказа
+            break  # Выходим из цикла
+        elif muffin_extras_choice == "4":  # Если выбран пункт 4 (Вернуться назад)
+            start_order()  # Возвращаемся к началу заказа
+            break  # Выходим из цикла
+        else:
+            print("Некорректное значение")  # Выводим сообщение об ошибке при некорректном вводе
+
+
+def tiramisu_extras_chooser():
+    """
+    Позволяет пользователю выбрать добавки для тирамису.
+    Выводит меню добавок и устанавливает выбранную добавку и ее цену.
+    """
+    while True:  # Бесконечный цикл до тех пор, пока не будет сделан корректный выбор
+        print(
+            "Выберите добавку для тирамису:\n"
+            "0. Пропустить\n"
+            "1. Какао (+{:.2f}€)\n".format(TIRAMISU_COCOA_PRICE),
+            "2. Шоколад (+{:.2f}€)\n".format(TIRAMISU_CHOCOLATE_PRICE),
+            "3. Кофе (+{:.2f}€)\n".format(TIRAMISU_COFFEE_PRICE),
+            "4. Вернуться назад\n"
+        )  # Выводим меню добавок для тирамису
+        tiramisu_extras_choice = input("\n")  # Получаем выбор пользователя
+
+        if tiramisu_extras_choice == "1":  # Если выбран пункт 1 (Какао)
+            global dessert_extra_name, dessert_extra_price  # Используем глобальные переменные для сохранения данных о добавке
+            dessert_extra_name = "Какао"  # Устанавливаем название добавки
+            dessert_extra_price = TIRAMISU_COCOA_PRICE  # Устанавливаем цену добавки
+            break  # Выходим из цикла
+        elif tiramisu_extras_choice == "2":  # Если выбран пункт 2 (Шоколад)
+            dessert_extra_name = "Шоколад"  # Устанавливаем название добавки
+            dessert_extra_price = TIRAMISU_CHOCOLATE_PRICE  # Устанавливаем цену добавки
+            break  # Выходим из цикла
+        elif tiramisu_extras_choice == "3":  # Если выбран пункт 3 (Кофе)
+            dessert_extra_name = "Кофе"  # Устанавливаем название добавки
+            dessert_extra_price = TIRAMISU_COFFEE_PRICE  # Устанавливаем цену добавки
+            break  # Выходим из цикла
+        elif tiramisu_extras_choice == "0":  # Если выбран пункт 0 (Пропустить)
+            print("Добавки для тирамису пропущены.")  # Выводим сообщение о пропуске добавок
+            start_order()  # Возвращаемся к началу заказа
+            break  # Выходим из цикла
+        elif tiramisu_extras_choice == "4":  # Если выбран пункт 4 (Вернуться назад)
+            start_order()  # Возвращаемся к началу заказа
+            break  # Выходим из цикла
+        else:
+            print("Некорректное значение")  # Выводим сообщение об ошибке при некорректном вводе
+
+
+# ------- Функции выбора напитков -------
+def drink_chooser():
+    """
+    Позволяет пользователю выбрать напиток из меню.
+    Вызывает соответствующие функции для выбора конкретного напитка.
+    """
+    while True:  # Бесконечный цикл до тех пор, пока не будет сделан корректный выбор
+        print(
+            "Выберите напиток:\n"
+            "0. Вернуться назад\n"
+            "1. Кофе\n"
+            "2. Чай\n"
+            "3. Лимонад\n"
+        )  # Выводим меню напитков
+        drink_choice = input("\n")  # Получаем выбор пользователя
+
+        if drink_choice == "1":  # Если выбран пункт 1 (Кофе)
+            coffee_chooser()  # Вызываем функцию выбора кофе
+            break  # Выходим из цикла
+        elif drink_choice == "2":  # Если выбран пункт 2 (Чай)
+            tea_chooser()  # Вызываем функцию выбора чая
+            break  # Выходим из цикла
+        elif drink_choice == "3":  # Если выбран пункт 3 (Лимонад)
+            lemonade_chooser()  # Вызываем функцию выбора лимонада
+            break  # Выходим из цикла
+        elif drink_choice == "0":  # Если выбран пункт 0 (Вернуться назад)
+            start_order()  # Возвращаемся к началу заказа
+            break  # Выходим из цикла
+        else:
+            print("Некорректное значение")  # Выводим сообщение об ошибке при некорректном вводе
+
+
+def coffee_chooser():
+    """
+    Устанавливает название и цену для кофе, вызывает функцию выбора добавок.
+    """
+    global drink_name, drink_price  # Используем глобальные переменные для сохранения данных о напитке
+    drink_name = "Кофе"  # Устанавливаем название напитка
+    drink_price = COFFEE_PRICE  # Устанавливаем цену напитка
+    coffee_extras_chooser()  # Вызываем функцию выбора добавок для кофе
+
+
+def tea_chooser():
+    """
+    Устанавливает название и цену для чая, вызывает функцию выбора добавок.
+    """
+    global drink_name, drink_price  # Используем глобальные переменные для сохранения данных о напитке
+    drink_name = "Чай"  # Устанавливаем название напитка
+    drink_price = TEA_PRICE  # Устанавливаем цену напитка
+    tea_extras_chooser()  # Вызываем функцию выбора добавок для чая
+
+
+def lemonade_chooser():
+    """
+    Устанавливает название и цену для лимонада, вызывает функцию выбора добавок.
+    """
+    global drink_name, drink_price  # Используем глобальные переменные для сохранения данных о напитке
+    drink_name = "Лимонад"  # Устанавливаем название напитка
+    drink_price = LEMONADE_PRICE  # Устанавливаем цену напитка
+    lemonade_extras_chooser()  # Вызываем функцию выбора добавок для лимонада
+
+
+# ------- Функции выбора добавок для напитков -------
+def coffee_extras_chooser():
+    """
+    Позволяет пользователю выбрать добавки для кофе.
+    Выводит меню добавок и устанавливает выбранную добавку и ее цену.
+    """
+    while True:  # Бесконечный цикл до тех пор, пока не будет сделан корректный выбор
+        print(
+            "Выберите добавку для кофе:\n"
+            "0. Пропустить\n"
+            "1. Молоко (+{:.2f}€)\n".format(COFFEE_MILK_PRICE),
+            "2. Сахар (+{:.2f}€)\n".format(COFFEE_SUGAR_PRICE),
+            "3. Сироп (+{:.2f}€)\n".format(COFFEE_SYRUP_PRICE),
+            "4. Вернуться назад\n"
+        )  # Выводим меню добавок для кофе
+        coffee_extras_choice = input("\n")  # Получаем выбор пользователя
+
+        if coffee_extras_choice == "1":  # Если выбран пункт 1 (Молоко)
+            global drink_extra_name, drink_extra_price  # Используем глобальные переменные для сохранения данных о добавке
+            drink_extra_name = "Молоко"  # Устанавливаем название добавки
+            drink_extra_price = COFFEE_MILK_PRICE  # Устанавливаем цену добавки
+            break  # Выходим из цикла
+        elif coffee_extras_choice == "2":  # Если выбран пункт 2 (Сахар)
+            drink_extra_name = "Сахар"  # Устанавливаем название добавки
+            drink_extra_price = COFFEE_SUGAR_PRICE  # Устанавливаем цену добавки
+            break  # Выходим из цикла
+        elif coffee_extras_choice == "3":  # Если выбран пункт 3 (Сироп)
+            drink_extra_name = "Сироп"  # Устанавливаем название добавки
+            drink_extra_price = COFFEE_SYRUP_PRICE  # Устанавливаем цену добавки
+            break  # Выходим из цикла
+        elif coffee_extras_choice == "0":  # Если выбран пункт 0 (Пропустить)
+            print("Добавки для кофе пропущены.")  # Выводим сообщение о пропуске добавок
+            start_order()  # Возвращаемся к началу заказа
+            break  # Выходим из цикла
+        elif coffee_extras_choice == "4":  # Если выбран пункт 4 (Вернуться назад)
+            start_order()  # Возвращаемся к началу заказа
+            break  # Выходим из цикла
+        else:
+            print("Некорректное значение")  # Выводим сообщение об ошибке при некорректном вводе
+
+
+def tea_extras_chooser():
+    """
+    Позволяет пользователю выбрать добавки для чая.
+    Выводит меню добавок и устанавливает выбранную добавку и ее цену.
+    """
+    while True:  # Бесконечный цикл до тех пор, пока не будет сделан корректный выбор
+        print(
+            "Выберите добавку для чая:\n"
+            "0. Пропустить\n"
+            "1. Лимон (+{:.2f}€)\n".format(TEA_LEMON_PRICE),
+            "2. Мята (+{:.2f}€)\n".format(TEA_MINT_PRICE),
+            "3. Мед (+{:.2f}€)\n".format(TEA_HONEY_PRICE),
+            "4. Вернуться назад\n"
+        )  # Выводим меню добавок для чая
+        tea_extras_choice = input("\n")  # Получаем выбор пользователя
+
+        if tea_extras_choice == "1":  # Если выбран пункт 1 (Лимон)
+            global drink_extra_name, drink_extra_price  # Используем глобальные переменные для сохранения данных о добавке
+            drink_extra_name = "Лимон"  # Устанавливаем название добавки
+            drink_extra_price = TEA_LEMON_PRICE  # Устанавливаем цену добавки
+            break  # Выходим из цикла
+        elif tea_extras_choice == "2":  # Если выбран пункт 2 (Мята)
+            drink_extra_name = "Мята"  # Устанавливаем название добавки
+            drink_extra_price = TEA_MINT_PRICE  # Устанавливаем цену добавки
+            break  # Выходим из цикла
+        elif tea_extras_choice == "3":  # Если выбран пункт 3 (Мед)
+            drink_extra_name = "Мед"  # Устанавливаем название добавки
+            drink_extra_price = TEA_HONEY_PRICE  # Устанавливаем цену добавки
+            break  # Выходим из цикла
+        elif tea_extras_choice == "0":  # Если выбран пункт 0 (Пропустить)
+            print("Добавки для чая пропущены.")  # Выводим сообщение о пропуске добавок
+            start_order()  # Возвращаемся к началу заказа
+            break  # Выходим из цикла
+        elif tea_extras_choice == "4":  # Если выбран пункт 4 (Вернуться назад)
+            start_order()  # Возвращаемся к началу заказа
+            break  # Выходим из цикла
+        else:
+            print("Некорректное значение")  # Выводим сообщение об ошибке при некорректном вводе
+
+
+def lemonade_extras_chooser():
+    """
+    Позволяет пользователю выбрать добавки для лимонада.
+    Выводит меню добавок и устанавливает выбранную добавку и ее цену.
+    """
+    while True:  # Бесконечный цикл до тех пор, пока не будет сделан корректный выбор
+        print(
+            "Выберите добавку для лимонада:\n"
+            "0. Пропустить\n"
+            "1. Мята (+{:.2f}€)\n".format(LEMONADE_MINT_PRICE),
+            "2. Ягоды (+{:.2f}€)\n".format(LEMONADE_BERRIES_PRICE),
+            "3. Сироп (+{:.2f}€)\n".format(LEMONADE_SYRUP_PRICE),
+            "4. Вернуться назад\n"
+        )  # Выводим меню добавок для лимонада
+        lemonade_extras_choice = input("\n")  # Получаем выбор пользователя
+
+        if lemonade_extras_choice == "1":  # Если выбран пункт 1 (Мята)
+            global drink_extra_name, drink_extra_price  # Используем глобальные переменные для сохранения данных о добавке
+            drink_extra_name = "Мята"  # Устанавливаем название добавки
+            drink_extra_price = LEMONADE_MINT_PRICE  # Устанавливаем цену добавки
+            break  # Выходим из цикла
+        elif lemonade_extras_choice == "2":  # Если выбран пункт 2 (Ягоды)
+            drink_extra_name = "Ягоды"  # Устанавливаем название добавки
+            drink_extra_price = LEMONADE_BERRIES_PRICE  # Устанавливаем цену добавки
+            break  # Выходим из цикла
+        elif lemonade_extras_choice == "3":  # Если выбран пункт 3 (Сироп)
+            drink_extra_name = "Сироп"  # Устанавливаем название добавки
+            drink_extra_price = LEMONADE_SYRUP_PRICE  # Устанавливаем цену добавки
+            break  # Выходим из цикла
+        elif lemonade_extras_choice == "0":  # Если выбран пункт 0 (Пропустить)
+            print("Добавки для лимонада пропущены.")  # Выводим сообщение о пропуске добавок
+            start_order()  # Возвращаемся к началу заказа
+            break  # Выходим из цикла
+        elif lemonade_extras_choice == "4":  # Если выбран пункт 4 (Вернуться назад)
+            start_order()  # Возвращаемся к началу заказа
+            break  # Выходим из цикла
+        else:
+            print("Некорректное значение")  # Выводим сообщение об ошибке при некорректном вводе
+
+
+# ------- Функция начала заказа -------
+def start_order():
+    """
+    Запускает процесс выбора блюд, позволяя пользователю выбрать категорию блюда
+    или завершить заказ.
+    """
+    while True:  # Бесконечный цикл до тех пор, пока заказ не будет завершен
+        print(
+            "Какое блюдо вы хотите?\n"
+            "0. Завершить заказ\n"
+            "1. Основное блюдо\n"
+            "2. Салат\n"
+            "3. Десерт\n"
+            "4. Напиток\n"
+        )  # Выводим главное меню
+        main_course_choice = input("\n")  # Получаем выбор пользователя
+
+        if main_course_choice == "0":  # Если выбран пункт 0 (Завершить заказ)
+            complete_order()  # Вызываем функцию завершения заказа
+            break  # Выходим из цикла
+        elif main_course_choice == "1":  # Если выбран пункт 1 (Основное блюдо)
+            first_dish_chooser()  # Вызываем функцию выбора основного блюда
+        elif main_course_choice == "2":  # Если выбран пункт 2 (Салат)
+            salad_chooser()  # Вызываем функцию выбора салата
+        elif main_course_choice == "3":  # Если выбран пункт 3 (Десерт)
+            dessert_chooser()  # Вызываем функцию выбора десерта
+        elif main_course_choice == "4":  # Если выбран пункт 4 (Напиток)
+            drink_chooser()  # Вызываем функцию выбора напитка
+        else:
+            print("Некорректное значение")  # Выводим сообщение об ошибке при некорректном вводе
+
+
+# ------- Функция завершения заказа -------
+def complete_order():
+    """
+    Выводит информацию о заказе и общую стоимость,
+    предлагает пользователю завершить или изменить заказ.
+    """
+    # Бесконечный цикл для отображения меню подтверждения заказа
+    while True:
+        print("\n--- Ваш заказ ---")  # Разделитель и пустая строка для отступа
+
+        order_items = []  # Создаем пустой список для хранения элементов заказа
+        item_number = 1  # Инициализируем номер пункта заказа
+        # Проверяем, выбрано ли основное блюдо
+        if first_dish_name:
+            # Добавляем в список информацию об основном блюде и его добавке
+            order_items.append(
+                f"Основное блюдо: {first_dish_name} {f'с {first_dish_extra_name}' if first_dish_extra_name else ''}")
+        # Увеличиваем номер пункта
+        item_number += 1
+        # Проверяем, выбран ли салат
+        if salad_name:
+            # Добавляем в список информацию о салате и его добавке
+            order_items.append(f"Салат: {salad_name} {f'с {salad_extra_name}' if salad_extra_name else ''}")
+        # Увеличиваем номер пункта
+        item_number += 1
+        # Проверяем, выбран ли десерт
+        if dessert_name:
+            # Добавляем в список информацию о десерте и его добавке
+            order_items.append(f"Десерт: {dessert_name} {f'с {dessert_extra_name}' if dessert_extra_name else ''}")
+        # Увеличиваем номер пункта
+        item_number += 1
+        # Проверяем, выбран ли напиток
+        if drink_name:
+            # Добавляем в список информацию о напитке и его добавке
+            order_items.append(f"Напиток: {drink_name} {f'с {drink_extra_name}' if drink_extra_name else ''}")
+        # Увеличиваем номер пункта
+        item_number += 1
+
+        # Выводим все элементы заказа
+        for item in order_items:
+            print(item)  # Выводим элементы заказа
+
+        print("-----------------")
+
+        # Подсчитываем общую стоимость заказа
+        total_price = count_total_price()
+        print(f"Общая стоимость: {total_price:.2f}€")
+
+        print("0. Завершить заказ")
+        print("5. Изменить/удалить блюдо")
+        # Бесконечный цикл для получения корректного ввода пользователя
+        while True:
+            try:
+                # Получаем выбор пользователя
+                change_order = int(input("Хотите что-то изменить?: "))
+                if 0 <= change_order <= 5:
+                    break  # Выходим из цикла, если ввод корректен
+                else:
+                    # Сообщение об некорректном вводе
+                    print("Пожалуйста, введите число от 0 до 5")
+            except ValueError:
+                # Сообщение об некорректном вводе
+                print("Некорректный ввод")
+
+        # Если пользователь выбрал завершение заказа
+        if change_order == 0:
+            print("Спасибо за заказ!")
+            break  # Выходим из цикла и завершаем функцию
+        # Если пользователь выбрал изменение/удаление заказа
+        elif change_order == 5:
+            start_order()
+            continue  # Пропускаем текущую итерацию цикла, чтобы вернуться в начало
+        else:
+            # Сообщение об некорректном вводе
+            print("Некорректный ввод")
+
+
+# ------- Запуск программы -------
+start_order()
