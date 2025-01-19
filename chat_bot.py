@@ -211,7 +211,7 @@ def choose_item(items, category_name, lang, selected_language, show_back=True):
         dict or None or "back": Словарь выбранного элемента, None если "Пропустить", или "back" если "Назад".
     """
     print(f"{lang['choose_dish']} {lang[category_name]}:")
-    # Выводим заголовок меню, используя строки из языкового словаря
+    # Выводим заголовок меню, используя строки из языкового словаря.
 
     while True:
         # Запускаем бесконечный цикл, пока пользователь не сделает правильный выбор.
@@ -219,18 +219,19 @@ def choose_item(items, category_name, lang, selected_language, show_back=True):
             # Выводим пронумерованный список элементов меню с их названиями и ценами.
             print(f"{i}. {item['name'][selected_language]} ({item['price']:.2f}€)")
 
-        if not show_back:  # Изменено
-            print(f"0. {lang['exit']}")  # Изменено
+        if not show_back:
+            # Если show_back равно False, выводим опцию "0. Пропустить"
+            print(f"0. {lang['exit']}")
         # Выводим опцию для пропуска выбора блюда
         if show_back:
-            # Если show_back == True, выводим опцию "9. Назад".
+            # Если show_back равно True, выводим опцию "9. Назад".
             print(f"9. {lang['exit']}")
 
         choice = input(f"{lang['choose_dish']} ")
         # Получаем ввод от пользователя.
 
-        if choice == "0" and not show_back:  # Изменено
-            # Если пользователь ввел "0", возвращаем None (пропуск выбора).
+        if choice == "0" and not show_back:
+            # Если пользователь ввел "0" и опция show_back отключена, возвращаем None (пропуск выбора).
             return None
         if show_back and choice == "9":
             # Если пользователь ввел "9" и опция show_back включена, возвращаем "back" (возврат назад).
@@ -350,7 +351,7 @@ def change_order(order, lang, selected_language):
             print(f"{i}. {item['name']}")
         print(f"0. {lang['exit']}")
         # Выводим опцию для пропуска изменения заказа.
-        print(f"5. {lang['add_item']}")
+        print(f"a. {lang['add_item']}")
         # Выводим опцию для добавления блюда.
         choice = input(f"{lang['remove_item']}")
         # Получаем ввод от пользователя.
@@ -361,8 +362,8 @@ def change_order(order, lang, selected_language):
             # Если ввод является цифрой и находится в пределах доступных вариантов,
             del order[int(choice) - 1]
             # Удаляем выбранный элемент из заказа.
-        elif choice == "5":
-            # Если пользователь ввел "2" вызываем функцию `start_order` для добавления блюда
+        elif choice == "a":
+            # Если пользователь ввел "a" вызываем функцию `start_order` для добавления блюда
             start_order(selected_language, order)
         else:
             # Если ввод не соответствует ни одному из условий, выводим сообщение об ошибке.
@@ -371,7 +372,7 @@ def change_order(order, lang, selected_language):
     # Возвращаем измененный заказ.
 
 
-def start_order(selected_language, order = None):
+def start_order(selected_language, order=None):
     """
     Управляет основным циклом заказа.
 
@@ -399,64 +400,65 @@ def start_order(selected_language, order = None):
             # Если пользователь ввел "0", это означает, что он хочет завершить заказ
             if order:
                 # Если заказ не пустой, вызываем функцию подтверждения заказа.
-                 confirm_order(order, lang, selected_language)
-                 # Выводим сводку заказа
-                 print(lang["change_question"])
-                 # Задаем вопрос, хочет ли пользователь что-то изменить
-                 choice = input(f"{lang['your_choice']}")
-                 # Получаем ответ от пользователя
-                 if choice == "5":
+                confirm_order(order, lang, selected_language)
+                # Выводим сводку заказа
+                print(lang["change_question"])
+                # Задаем вопрос, хочет ли пользователь что-то изменить
+                choice = input(f"{lang['your_choice']}")
+                # Получаем ответ от пользователя
+                if choice == "5":
                     # Если пользователь ответил "5" вызываем функцию изменения заказа
                     order = change_order(order, lang, selected_language)
-                 else:
+                else:
                     # Если пользователь ответил не "5"  завершаем заказ и выходим из цикла
-                      break
+                    break
             else:
                 # Если заказ пустой, выходим из цикла.
                 break
-        elif choice.isdigit() and 1 <= int(choice) <= len(CATEGORIES) :
+        elif choice.isdigit() and 1 <= int(choice) <= len(CATEGORIES):
             # Если ввод является цифрой и находится в пределах доступных категорий,
-          history.append(order)
-          # Добавляем текущий заказ в историю.
-          category_index = int(choice) -1
-          # Получаем индекс выбранной категории
-          category_name = list(CATEGORIES.keys())[category_index]
-          # Получаем название категории из словаря.
-          category = CATEGORIES[category_name]
-          # Получаем словарь категории.
-          dish = choose_item(category["items"], category_name, lang, selected_language, True)
-          # Вызываем функцию выбора элемента для текущей категории.
-          if dish == "back":
-             # Если пользователь выбрал "Назад",
-            if history:
-                # Если история не пуста, возвращаемся к предыдущему заказу
-                order = history.pop()
-            else:
-               # Если история пуста,  очищаем заказ и выходим из цикла
-               order = [] # Изменено
-               break # Изменено
-          elif dish:
-            # Если пользователь выбрал элемент, добавляем его в заказ.
-            order.append(dish)
+            history.append(order)
+            # Добавляем текущий заказ в историю.
+            category_index = int(choice) - 1
+            # Получаем индекс выбранной категории
+            category_name = list(CATEGORIES.keys())[category_index]
+            # Получаем название категории из словаря.
+            category = CATEGORIES[category_name]
+            # Получаем словарь категории.
+            dish = choose_item(category["items"], category_name, lang, selected_language, True)
+            # Вызываем функцию выбора элемента для текущей категории.
+            if dish == "back":
+                # Если пользователь выбрал "Назад",
+                if history:
+                    # Если история не пуста, возвращаемся к предыдущему заказу
+                    order = history.pop()
+                else:
+                    # Если история пуста,  очищаем заказ и выходим из цикла
+                    order = []
+                    break
+            elif dish:
+                # Если пользователь выбрал элемент, добавляем его в заказ.
+                order.append(dish)
         elif choice == "9":
-           # Если пользователь ввел "9" очищаем заказ и выходим из цикла
-            order = [] # Изменено
-            break # Изменено
+            # Если пользователь ввел "9" очищаем заказ и выходим из цикла
+            order = []
+            break
         else:
             # Если ввод не соответствует ни одному из условий, выводим сообщение об ошибке.
             print(lang["error"])
+
 
 # --- Основной вход в программу ---
 if __name__ == "__main__":
     # Проверяем, что скрипт запущен как основная программа.
     while True:
-      # Запускаем бесконечный цикл выбора языка и заказа.
-      selected_language = choose_language()
-      # Вызываем функцию для выбора языка.
-      if selected_language in LANGUAGES:
-        # Если выбранный язык есть в словаре языков
-        start_order(selected_language)
-        # Запускаем основной цикл заказа, передавая выбранный язык.
-      else:
-        # Если выбранный язык не найден в словаре, выводим сообщение об ошибке (на английском).
-        print(LANGUAGES["en"]["invalid_language"])
+        # Запускаем бесконечный цикл выбора языка и заказа.
+        selected_language = choose_language()
+        # Вызываем функцию для выбора языка.
+        if selected_language in LANGUAGES:
+            # Если выбранный язык есть в словаре языков
+            start_order(selected_language)
+            # Запускаем основной цикл заказа, передавая выбранный язык.
+        else:
+            # Если выбранный язык не найден в словаре, выводим сообщение об ошибке (на английском).
+            print(LANGUAGES["en"]["invalid_language"])
