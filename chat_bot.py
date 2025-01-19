@@ -3,7 +3,7 @@ LANGUAGES = {
     "ru": {
         "welcome": "Привет! Я помогу вам оформить заказ. Давайте начнем с выбора блюда.",
         "main_menu": "Какое блюдо вы хотите?\n0. Завершить заказ\n1. Основное блюдо\n2. Салат\n3. Десерт\n4. Напиток\n9. Назад",
-        "choose_dish": "Выберите блюдо:",
+        "choose_dish": "Введите свой выбор:",
         "choose_extras": "Выберите добавки (введите номер или 0 для пропуска):",
         "dish_added": "Добавлено:",
         "order_summary": "Ваш заказ:",
@@ -25,7 +25,7 @@ LANGUAGES = {
     "en": {
         "welcome": "Hello! I will help you place an order. Let's start by choosing a dish.",
         "main_menu": "What dish do you want?\n0. Finish order\n1. Main course\n2. Salad\n3. Dessert\n4. Drink\n9. Back",
-        "choose_dish": "Choose a dish:",
+        "choose_dish": "Enter your choice:",
         "choose_extras": "Choose extras (enter the number or 0 to skip):",
         "dish_added": "Added:",
         "order_summary": "Your order:",
@@ -47,7 +47,7 @@ LANGUAGES = {
     "de": {
         "welcome": "Hallo! Ich helfe Ihnen bei der Bestellung. Lassen Sie uns mit der Auswahl eines Gerichts beginnen.",
         "main_menu": "Welches Gericht möchten Sie?\n0. Bestellung abschließen\n1. Hauptgericht\n2. Salat\n3. Dessert\n4. Getränk\n9. Zurück",
-        "choose_dish": "Wählen Sie ein Gericht:",
+        "choose_dish": "Geben Sie Ihre Wahl ein:",
         "choose_extras": "Wählen Sie Extras (Nummer eingeben oder 0 zum Überspringen):",
         "dish_added": "Hinzugefügt:",
         "order_summary": "Ihre Bestellung:",
