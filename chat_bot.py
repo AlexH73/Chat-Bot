@@ -349,20 +349,20 @@ def change_order(order, lang, selected_language):
         for i, item in enumerate(order, start=1):
             # Выводим пронумерованный список элементов текущего заказа.
             print(f"{i}. {item['name']}")
-        print(f"0. {lang['exit']}")
+        print(f"9. {lang['exit']}")
         # Выводим опцию для пропуска изменения заказа.
-        print(f"a. {lang['add_item']}")
+        print(f"0. {lang['add_item']}")
         # Выводим опцию для добавления блюда.
         choice = input(f"{lang['remove_item']}")
         # Получаем ввод от пользователя.
-        if choice == "0":
-            # Если пользователь ввел "0", выходим из цикла.
+        if choice == "9":
+            # Если пользователь ввел "9", выходим из цикла.
             break
         elif choice.isdigit() and 1 <= int(choice) <= len(order):
             # Если ввод является цифрой и находится в пределах доступных вариантов,
             del order[int(choice) - 1]
             # Удаляем выбранный элемент из заказа.
-        elif choice == "a":
+        elif choice == "0":
             # Если пользователь ввел "a" вызываем функцию `start_order` для добавления блюда
             start_order(selected_language, order)
         else:
