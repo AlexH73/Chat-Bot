@@ -9,7 +9,6 @@ with open('menu.json', 'r', encoding='utf-8') as f:
     CATEGORIES = json.load(f)
 
 
-
 def choose_language():
     """
     Выводит меню выбора языка и возвращает выбранный язык.
@@ -302,4 +301,3 @@ if __name__ == "__main__":
         else:
             # Если выбранный язык не найден в словаре, выводим сообщение об ошибке (на английском).
             print(LANGUAGES["en"]["invalid_language"])
-
