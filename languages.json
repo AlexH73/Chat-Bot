@@ -1,5 +1,4 @@
-# --- Мультиязычность ---
-LANGUAGES = {
+{
     "ru": {
         "welcome": "Привет! Я помогу вам оформить заказ. Давайте начнем с выбора блюда.",
         "main_menu": "Какое блюдо вы хотите?\n0. Завершить заказ\n1. Основное блюдо\n2. Салат\n3. Десерт\n4. Напиток\n9. Назад",
@@ -65,5 +64,5 @@ LANGUAGES = {
         "remove_item": "Element entfernen:",
         "add_item": "Element hinzufügen",
         "change_question": "Möchten Sie etwas ändern?\n0. Bestellung abschließen\n5. Gericht ändern/entfernen"
-    },
+    }
 }

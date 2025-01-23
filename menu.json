@@ -1,5 +1,4 @@
-# --- Данные о блюдах ---
-CATEGORIES = {
+{
     "main_course": {
         "name": {
             "ru": "Основное блюдо",
@@ -7,26 +6,110 @@ CATEGORIES = {
             "de": "Hauptgericht"
         },
         "items": [
-            {"name": {"ru": "Пицца", "en": "Pizza", "de": "Pizza"}, "price": 10.00, "extras": [
-                {"name": {"ru": "Сыр", "en": "Cheese", "de": "Käse"}, "price": 1.50},
-                {"name": {"ru": "Бекон", "en": "Bacon", "de": "Speck"}, "price": 2.00},
-                {"name": {"ru": "Острый соус", "en": "Spicy sauce", "de": "Scharfe Soße"}, "price": 1.00},
+            {
+                "name":
+                {
+                    "ru": "Пицца",
+                    "en": "Pizza",
+                    "de": "Pizza"},
+                "price": 10.00,
+                "extras": [
+                {
+                    "name":
+                    {
+                        "ru": "Сыр",
+                        "en": "Cheese",
+                        "de": "Käse"
+                    },
+                    "price": 1.50
+                },
+                {
+                    "name":
+                    {
+                        "ru": "Бекон",
+                        "en": "Bacon",
+                        "de": "Speck"
+                    },
+                    "price": 2.00
+                },
+                {
+                    "name":
+                    {
+                        "ru": "Острый соус",
+                        "en": "Spicy sauce",
+                        "de": "Scharfe Soße"
+                    }, "price": 1.00
+                }
             ],
              "max_extras": 2
              },
-            {"name": {"ru": "Паста", "en": "Pasta", "de": "Pasta"}, "price": 8.00, "extras": [
-                {"name": {"ru": "Сыр", "en": "Cheese", "de": "Käse"}, "price": 1.00},
-                {"name": {"ru": "Грибы", "en": "Mushrooms", "de": "Pilze"}, "price": 1.50},
-                {"name": {"ru": "Бекон", "en": "Bacon", "de": "Speck"}, "price": 1.50},
+            {
+                "name":
+                {
+                    "ru": "Паста",
+                    "en": "Pasta",
+                    "de": "Pasta"},
+                "price": 8.00,
+                "extras": [
+                {
+                    "name":
+                    {
+                        "ru": "Сыр",
+                        "en": "Cheese",
+                        "de": "Käse"
+                    },
+                    "price": 1.00
+                },
+                {
+                    "name":
+                    {
+                        "ru": "Грибы",
+                        "en": "Mushrooms",
+                        "de": "Pilze"
+                    },
+                    "price": 1.50
+                },
+                {
+                    "name":
+                    {
+                        "ru": "Бекон",
+                        "en": "Bacon",
+                        "de": "Speck"
+                    },
+                    "price": 1.50
+                }
             ],
              "max_extras": 2
              },
-            {"name": {"ru": "Стейк", "en": "Steak", "de": "Steak"}, "price": 15.00, "extras": [
-                {"name": {"ru": "Соус", "en": "Sauce", "de": "Soße"}, "price": 2.00},
-                {"name": {"ru": "Картофель", "en": "Potatoes", "de": "Kartoffeln"}, "price": 1.50},
+            {
+                "name":
+                {
+                    "ru": "Стейк",
+                    "en": "Steak",
+                    "de": "Steak"},
+                "price": 15.00,
+                "extras": [
+                {
+                    "name":
+                    {
+                        "ru": "Соус",
+                        "en": "Sauce",
+                        "de": "Soße"
+                    },
+                    "price": 2.00
+                },
+                {
+                    "name":
+                    {
+                        "ru": "Картофель",
+                        "en": "Potatoes",
+                        "de": "Kartoffeln"
+                    },
+                    "price": 1.50
+                }
             ],
              "max_extras": 1
-             },
+             }
         ]
     },
     "salad": {
@@ -36,21 +119,91 @@ CATEGORIES = {
             "de": "Salat"
         },
         "items": [
-            {"name": {"ru": "Цезарь", "en": "Caesar", "de": "Caesar"}, "price": 5.00, "extras": [
-                {"name": {"ru": "Гренки", "en": "Croutons", "de": "Croutons"}, "price": 0.50},
-                {"name": {"ru": "Курица", "en": "Chicken", "de": "Hähnchen"}, "price": 1.00},
+            {
+                "name":
+                {
+                    "ru": "Цезарь",
+                    "en": "Caesar",
+                    "de": "Caesar"
+                },
+                "price": 5.00,
+                "extras": [
+                {
+                    "name":
+                    {
+                        "ru": "Гренки",
+                        "en": "Croutons",
+                        "de": "Croutons"
+                    }, "price": 0.50
+                },
+                {
+                    "name":
+                    {
+                        "ru": "Курица",
+                        "en": "Chicken",
+                        "de": "Hähnchen"
+                    },
+                    "price": 1.00
+                }
             ],
-             "max_extras": 2},
-            {"name": {"ru": "Греческий", "en": "Greek", "de": "Griechisch"}, "price": 4.50, "extras": [
-                {"name": {"ru": "Маслины", "en": "Olives", "de": "Oliven"}, "price": 0.50},
-                {"name": {"ru": "Сыр фета", "en": "Feta cheese", "de": "Feta-Käse"}, "price": 1.00},
+             "max_extras": 2
+            },
+            {
+                "name":
+                {
+                    "ru": "Греческий",
+                    "en": "Greek",
+                    "de": "Griechisch"
+                },
+                "price": 4.50,
+                "extras": [
+                {
+                    "name":
+                    {
+                        "ru": "Маслины",
+                        "en": "Olives",
+                        "de": "Oliven"
+                    },
+                    "price": 0.50
+                },
+                {
+                    "name":
+                    {
+                        "ru": "Сыр фета",
+                        "en": "Feta cheese",
+                        "de": "Feta-Käse"
+                    },
+                    "price": 1.00
+                }
             ],
-             "max_extras": 2},
-            {"name": {"ru": "Оливье", "en": "Olivier", "de": "Olivier"}, "price": 6.00, "extras": [
-                {"name": {"ru": "Зеленый горошек", "en": "Green peas", "de": "Grüne Erbsen"}, "price": 0.50},
-                {"name": {"ru": "Морковь", "en": "Carrot", "de": "Karotte"}, "price": 0.50},
+             "max_extras": 2
+            },
+            {
+                "name":
+                {
+                    "ru": "Оливье",
+                    "en": "Olivier",
+                    "de": "Olivier"
+                }, "price": 6.00, "extras": [
+                {
+                    "name":
+                    {
+                        "ru": "Зеленый горошек",
+                        "en": "Green peas",
+                        "de": "Grüne Erbsen"},
+                    "price": 0.50
+                },
+                {
+                    "name":
+                    {
+                        "ru": "Морковь",
+                        "en": "Carrot",
+                        "de": "Karotte"
+                    },
+                    "price": 0.50
+                }
             ],
-             "max_extras": 2},
+             "max_extras": 2}
         ]
     },
     "dessert": {
@@ -60,18 +213,67 @@ CATEGORIES = {
             "de": "Dessert"
         },
         "items": [
-            {"name": {"ru": "Чизкейк", "en": "Cheesecake", "de": "Käsekuchen"}, "price": 4.00, "extras": [
-                {"name": {"ru": "Шоколадный сироп", "en": "Chocolate syrup", "de": "Schokoladensirup"}, "price": 0.50},
+            {
+                "name":
+                {
+                    "ru": "Чизкейк",
+                    "en": "Cheesecake",
+                    "de": "Käsekuchen"
+                },
+                "price": 4.00,
+                "extras": [
+                {
+                    "name":
+                    {
+                        "ru": "Шоколадный сироп",
+                        "en": "Chocolate syrup",
+                        "de": "Schokoladensirup"},
+                    "price": 0.50
+                }
             ],
-             "max_extras": 1},
-            {"name": {"ru": "Тирамису", "en": "Tiramisu", "de": "Tiramisu"}, "price": 4.50, "extras": [
-                {"name": {"ru": "Какао", "en": "Cocoa", "de": "Kakao"}, "price": 0.50},
+             "max_extras": 1
+            },
+            {
+                "name":
+                {
+                    "ru": "Тирамису",
+                    "en": "Tiramisu",
+                    "de": "Tiramisu"
+                },
+                "price": 4.50,
+                "extras": [
+                {
+                    "name":
+                    {
+                        "ru": "Какао",
+                        "en": "Cocoa",
+                        "de": "Kakao"
+                    },
+                    "price": 0.50
+                }
             ],
-             "max_extras": 1},
-            {"name": {"ru": "Мороженое", "en": "Ice cream", "de": "Eis"}, "price": 3.00, "extras": [
-                {"name": {"ru": "Фрукты", "en": "Fruits", "de": "Früchte"}, "price": 1.00},
+             "max_extras": 1
+            },
+            {
+                "name":
+                {
+                    "ru": "Мороженое",
+                    "en": "Ice cream",
+                    "de": "Eis"},
+                "price": 3.00,
+                "extras": [
+                {
+                    "name":
+                    {
+                        "ru": "Фрукты",
+                        "en": "Fruits",
+                        "de": "Früchte"
+                    },
+                    "price": 1.00
+                }
             ],
-             "max_extras": 1},
+             "max_extras": 1
+            }
         ]
     },
     "drink": {
@@ -81,20 +283,84 @@ CATEGORIES = {
             "de": "Getränk"
         },
         "items": [
-            {"name": {"ru": "Кофе", "en": "Coffee", "de": "Kaffee"}, "price": 2.50, "extras": [
-                {"name": {"ru": "Молоко", "en": "Milk", "de": "Milch"}, "price": 0.50},
-                {"name": {"ru": "Сахар", "en": "Sugar", "de": "Zucker"}, "price": 0.50},
+            {
+                "name": {
+                    "ru": "Кофе",
+                    "en": "Coffee",
+                    "de": "Kaffee"
+                },
+                "price": 2.50,
+                "extras": [
+                {
+                    "name": {
+                        "ru": "Молоко",
+                        "en": "Milk",
+                        "de": "Milch"
+                    },
+                    "price": 0.50
+                },
+                {
+                    "name":
+                    {
+                        "ru": "Сахар",
+                        "en": "Sugar",
+                        "de": "Zucker"
+                    },
+                    "price": 0.50
+                }
             ],
-             "max_extras": 2},
-            {"name": {"ru": "Чай", "en": "Tea", "de": "Tee"}, "price": 2.00, "extras": [
-                {"name": {"ru": "Лимон", "en": "Lemon", "de": "Zitrone"}, "price": 0.50},
-                {"name": {"ru": "Мед", "en": "Honey", "de": "Honig"}, "price": 0.50},
+             "max_extras": 2
+            },
+            {
+                "name":
+                {
+                    "ru": "Чай",
+                    "en": "Tea",
+                    "de": "Tee"
+                },
+                "price": 2.00,
+                "extras": [
+                {
+                    "name":
+                    {
+                        "ru": "Лимон",
+                        "en": "Lemon",
+                        "de": "Zitrone"
+                    },
+                    "price": 0.50
+                },
+                {
+                    "name":
+                    {
+                        "ru": "Мед",
+                        "en": "Honey",
+                        "de": "Honig"},
+                    "price": 0.50
+                }
             ],
-             "max_extras": 2},
-            {"name": {"ru": "Сок", "en": "Juice", "de": "Saft"}, "price": 3.00, "extras": [
-                {"name": {"ru": "Лед", "en": "Ice", "de": "Eis"}, "price": 0.50},
+             "max_extras": 2
+            },
+            {
+                "name":
+                {
+                    "ru": "Сок",
+                    "en": "Juice",
+                    "de": "Saft"
+                },
+                "price": 3.00,
+                "extras": [
+                {
+                    "name":
+                    {
+                        "ru": "Лед",
+                        "en": "Ice",
+                        "de": "Eis"
+                    },
+                    "price": 0.50
+                }
             ],
-             "max_extras": 1},
+             "max_extras": 1
+            }
         ]
-    },
+    }
 }
