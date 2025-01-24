@@ -27,7 +27,7 @@ share/python-wheels/
 MANIFEST
 
 # Другие папки и файлы
-.idea
+.idea/
 *.xml
 
 # PyInstaller
