@@ -1,4 +1,5 @@
-import json
+from data import LANGUAGES
+import os
 from utils import clear_screen
 
 def choose_language(languages):
@@ -42,7 +43,8 @@ def choose_item(items, category_name, lang, selected_language, show_back=True):
     Returns:
         dict or None or "back": Словарь выбранного элемента, None если "Пропустить", или "back" если "Назад".
     """
-    print(f"{lang['choose_dish']} {lang[category_name]}:")
+    clear_screen()
+    print(f"{lang['choose']} {lang[category_name]}:")
     # Выводим заголовок меню, используя строки из языкового словаря.
 
     while True:
@@ -59,7 +61,7 @@ def choose_item(items, category_name, lang, selected_language, show_back=True):
             # Если show_back равно True, выводим опцию "9. Назад".
             print(f"9. {lang['exit']}")
 
-        choice = input(f"{lang['choose_dish']} ")
+        choice = input(f"\n{lang['choose_dish']} ")
         # Получаем ввод от пользователя.
 
         if choice == "0" and not show_back:
@@ -123,6 +125,7 @@ def choose_extras(extras, lang, selected_language, max_extras=0):
             selected_extras.append(extras[int(choice) - 1])
             # Добавляем выбранную добавку в список.
             print(f"{lang['dish_added']} {extras[int(choice) - 1]['name'][selected_language]}")
+            print(lang["choose_extras"])
             # Выводим сообщение о добавлении.
             if max_extras != 0 and len(selected_extras) == max_extras:
                 # Если достигнут лимит максимального количества добавок, выходим из цикла.
@@ -161,11 +164,8 @@ def confirm_order(order, lang, selected_language):
                 print(f"   └─ {extra['name'][selected_language]} (+{extra['price']:.2f}€)")
                 total_price += extra["price"]
                 # Добавляем цену текущей добавки к общей стоимости заказа.
-    print(f"\n{lang['total_price']}: {total_price:.2f}€")
+    print(f"{lang['total_price']}: {total_price:.2f}€\n")
     # Выводим общую стоимость заказа.
-    print(lang["thank_you"])
-    # Выводим сообщение благодарности.
-
 
 def change_order(order, lang, selected_language):
     """
@@ -192,14 +192,15 @@ def change_order(order, lang, selected_language):
         # Получаем ввод от пользователя.
         if choice == "9":
             # Если пользователь ввел "9", выходим из цикла.
-            break
+            return "back"
         elif choice.isdigit() and 1 <= int(choice) <= len(order):
             # Если ввод является цифрой и находится в пределах доступных вариантов,
             del order[int(choice) - 1]
             # Удаляем выбранный элемент из заказа.
         elif choice == "0":
-            # Если пользователь ввел "a" вызываем функцию `start_order` для добавления блюда
-            start_order(selected_language, order)
+            # Если пользователь ввел "0", возвращаем "add_item" для добавления блюда
+           return "add_item"
+
         else:
             # Если ввод не соответствует ни одному из условий, выводим сообщение об ошибке.
             print(lang["error"])
