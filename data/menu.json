@@ -12,7 +12,7 @@
                     "ru": "Пицца",
                     "en": "Pizza",
                     "de": "Pizza"},
-                "price": 10.00,
+                "price": 8.00,
                 "extras": [
                 {
                     "name":
@@ -49,16 +49,16 @@
                     "ru": "Паста",
                     "en": "Pasta",
                     "de": "Pasta"},
-                "price": 8.00,
+                "price": 7.50,
                 "extras": [
                 {
                     "name":
                     {
-                        "ru": "Сыр",
-                        "en": "Cheese",
-                        "de": "Käse"
+                        "ru": "Пармезан",
+                        "en": "Parmesan cheese",
+                        "de": "Parmesan"
                     },
-                    "price": 1.00
+                    "price": 1.20
                 },
                 {
                     "name":
@@ -72,11 +72,11 @@
                 {
                     "name":
                     {
-                        "ru": "Бекон",
-                        "en": "Bacon",
-                        "de": "Speck"
+                        "ru": "Трюфельное масло",
+                        "en": "Truffle oil",
+                        "de": "Trüffelöl"
                     },
-                    "price": 1.50
+                    "price": 3.00
                 }
             ],
              "max_extras": 2
@@ -92,20 +92,29 @@
                 {
                     "name":
                     {
-                        "ru": "Соус",
-                        "en": "Sauce",
-                        "de": "Soße"
+                        "ru": "Соус барбекю",
+                        "en": "Barbecue sauce",
+                        "de": "Barbecue-Soße"
                     },
-                    "price": 2.00
+                    "price": 1.50
                 },
                 {
                     "name":
                     {
-                        "ru": "Картофель",
-                        "en": "Potatoes",
-                        "de": "Kartoffeln"
+                        "ru": "Гарнир",
+                        "en": "Garnish",
+                        "de": "Beilage"
                     },
-                    "price": 1.50
+                    "price": 2.50
+                },
+                {
+                    "name":
+                    {
+                        "ru": "Перечный соус",
+                        "en": "Pepper sauce",
+                        "de": "Pfeffersauce"
+                    },
+                    "price": 2.00
                 }
             ],
              "max_extras": 1
@@ -126,22 +135,31 @@
                     "en": "Caesar",
                     "de": "Caesar"
                 },
-                "price": 5.00,
+                "price": 6.00,
                 "extras": [
-                {
-                    "name":
-                    {
-                        "ru": "Гренки",
-                        "en": "Croutons",
-                        "de": "Croutons"
-                    }, "price": 0.50
-                },
                 {
                     "name":
                     {
                         "ru": "Курица",
                         "en": "Chicken",
                         "de": "Hähnchen"
+                    }, "price": 2.00
+                },
+                {
+                    "name":
+                    {
+                        "ru": "Креветки",
+                        "en": "Shrimp",
+                        "de": "Garnelen"
+                    },
+                    "price": 4.00
+                },
+                {
+                    "name":
+                    {
+                        "ru": "Дополнительный сыр",
+                        "en": "Extra cheese",
+                        "de": "Extra Käse"
                     },
                     "price": 1.00
                 }
@@ -169,14 +187,62 @@
                 {
                     "name":
                     {
-                        "ru": "Сыр фета",
-                        "en": "Feta cheese",
-                        "de": "Feta-Käse"
+                        "ru": "Дополнительный сыр Фета",
+                        "en": "Extra Feta cheese",
+                        "de": "Extra Feta-Käse"
+                    },
+                    "price": 1.50
+                },
+                {
+                    "name":
+                    {
+                        "ru": "Гренки",
+                        "en": "Croutons",
+                        "de": "Croutons"
                     },
                     "price": 1.00
                 }
             ],
              "max_extras": 2
+            },
+            {
+                "name":
+                {
+                    "ru": "Салат с тунцом",
+                    "en": "Tuna salad",
+                    "de": "Thunfischsalat"
+                },
+                "price": 7.00,
+                "extras": [
+                {
+                    "name":
+                    {
+                        "ru": "Креветки",
+                        "en": "Shrimp",
+                        "de": "Garnelen"
+                    },
+                    "price": 4.00
+                },
+                {
+                    "name":
+                    {
+                        "ru": "Авокадо",
+                        "en": "Avocado",
+                        "de": "Avocado"
+                    },
+                    "price": 2.50
+                },
+                {
+                    "name":
+                    {
+                        "ru": "Яйцо",
+                        "en": "Egg",
+                        "de": "Ei"
+                    },
+                    "price": 0.50
+                }
+            ],
+             "max_extras": 3
             },
             {
                 "name":
@@ -225,13 +291,37 @@
                 {
                     "name":
                     {
-                        "ru": "Шоколадный сироп",
-                        "en": "Chocolate syrup",
-                        "de": "Schokoladensirup"},
-                    "price": 0.50
+                        "ru": "Фрукты",
+                        "en": "Fruit",
+                        "de": "Obst"},
+                    "price": 2.00
+                },
+                {
+                    "name":
+                    {
+                        "ru": "Топпинг шоколадный",
+                        "en": "Chocolate Topping",
+                        "de": "Topping Schoko"},
+                    "price": 1.00
+                },
+                {
+                    "name":
+                    {
+                        "ru": "Топпинг ягодный",
+                        "en": "Berry Topping",
+                        "de": "Topping Beere"},
+                    "price": 1.00
+                },
+                {
+                    "name":
+                    {
+                        "ru": "Мороженое",
+                        "en": "Ice cream",
+                        "de": "Eis"},
+                    "price": 2.00
                 }
             ],
-             "max_extras": 1
+             "max_extras": 3
             },
             {
                 "name":
