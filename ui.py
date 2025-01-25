@@ -6,6 +6,7 @@ def choose_language(languages):
     """
     Выводит меню выбора языка и возвращает выбранный язык.
     """
+    clear_screen()
     print("Choose a language / Выберите язык / Wählen Sie eine Sprache:")
     # Выводим сообщение о выборе языка на трех языках.
     print("1. English\n2. Русский\n3. Deutsch")
@@ -145,8 +146,10 @@ def confirm_order(order, lang, selected_language):
         lang (dict): Словарь с текстовыми строками для выбранного языка.
         selected_language (str): Выбранный язык.
     """
+    clear_screen()
     print("\n" + lang["order_summary"])
     # Выводим заголовок заказа, используя строки из языкового словаря.
+    clear_screen()
     total_price = 0
     # Инициализируем переменную для хранения общей стоимости заказа.
     for i, item in enumerate(order, start=1):
@@ -173,6 +176,7 @@ def change_order(order, lang, selected_language):
           lang (dict): Словарь с текстовыми строками для выбранного языка.
           selected_language (str): Выбранный язык.
     """
+    clear_screen()
     while True:
         # Запускаем бесконечный цикл, пока пользователь не завершит изменение заказа.
         print("\n" + lang["change_order"])

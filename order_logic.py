@@ -1,5 +1,6 @@
 from data import LANGUAGES, CATEGORIES
 from ui import choose_item, confirm_order, change_order
+from utils import clear_screen
 
 def start_order(selected_language, order=None):
     """
@@ -9,6 +10,7 @@ def start_order(selected_language, order=None):
         selected_language (str): Выбранный язык.
         order (list): Список словарей, представляющий заказ.
     """
+    clear_screen()
     lang = LANGUAGES[selected_language]
     # Получаем языковой словарь для выбранного языка.
     print(lang["welcome"])
