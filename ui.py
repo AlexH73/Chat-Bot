@@ -111,7 +111,7 @@ def choose_extras(extras, lang, selected_language, max_extras=0):
         for i, extra in enumerate(extras, start=1):
             # Выводим пронумерованный список добавок с их названиями и ценами.
             print(f"{i}. {extra['name'][selected_language]} (+{extra['price']:.2f}€)")
-        print(f"0. {lang['exit']}")
+        print(f"0. {lang['skip_extras']}")
         # Выводим опцию для пропуска выбора добавок.
 
         choice = input(f"{lang['your_choice']}")
