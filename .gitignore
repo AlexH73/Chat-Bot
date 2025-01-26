@@ -29,6 +29,7 @@ MANIFEST
 # Другие папки и файлы
 .idea/
 *.xml
+.gitignore
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
