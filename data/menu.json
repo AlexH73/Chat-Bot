@@ -256,7 +256,8 @@
                     {
                         "ru": "Зеленый горошек",
                         "en": "Green peas",
-                        "de": "Grüne Erbsen"},
+                        "de": "Grüne Erbsen"
+                    },
                     "price": 0.50
                 },
                 {
@@ -293,7 +294,8 @@
                     {
                         "ru": "Фрукты",
                         "en": "Fruit",
-                        "de": "Obst"},
+                        "de": "Obst"
+                    },
                     "price": 2.00
                 },
                 {
@@ -301,7 +303,8 @@
                     {
                         "ru": "Топпинг шоколадный",
                         "en": "Chocolate Topping",
-                        "de": "Topping Schoko"},
+                        "de": "Topping Schoko"
+                    },
                     "price": 1.00
                 },
                 {
@@ -309,7 +312,8 @@
                     {
                         "ru": "Топпинг ягодный",
                         "en": "Berry Topping",
-                        "de": "Topping Beere"},
+                        "de": "Topping Beere"
+                    },
                     "price": 1.00
                 },
                 {
@@ -326,23 +330,89 @@
             {
                 "name":
                 {
-                    "ru": "Тирамису",
-                    "en": "Tiramisu",
-                    "de": "Tiramisu"
+                    "ru": "Маффин",
+                    "en": "Muffin",
+                    "de": "Muffin"
                 },
-                "price": 4.50,
+                "price": 3.50,
                 "extras": [
                 {
                     "name":
                     {
-                        "ru": "Какао",
-                        "en": "Cocoa",
-                        "de": "Kakao"
+                        "ru": "Топпинг шоколадный",
+                        "en": "Chocolate Topping",
+                        "de": "Topping Schoko"
                     },
-                    "price": 0.50
+                    "price": 1.00
+                },
+                {
+                    "name":
+                    {
+                        "ru": "Топпинг карамельный",
+                        "en": "Caramel topping",
+                        "de": "Karamell-Topping"
+                    },
+                    "price": 1.00
+                },
+                {
+                    "name":
+                    {
+                        "ru": "Орехи",
+                        "en": "Nuts",
+                        "de": "Nüsse"
+                    },
+                    "price": 1.00
+                },
+                {
+                    "name":
+                    {
+                        "ru": "Взбитые сливки",
+                        "en": "Whipped cream",
+                        "de": "Schlagsahne"
+                    },
+                    "price": 1.50
                 }
             ],
              "max_extras": 1
+            },
+            {
+                "name":
+                {
+                    "ru": "Тирамису",
+                    "en": "Tiramisu",
+                    "de": "Tiramisu"
+                },
+                "price": 5.00,
+                "extras": [
+                {
+                    "name":
+                    {
+                        "ru": "Дополнительный крем",
+                        "en": "Extra cream",
+                        "de": "Extra Sahne"
+                    },
+                    "price": 1.00
+                },
+                {
+                    "name":
+                    {
+                        "ru": "Какао-порошок",
+                        "en": "Cocoa powder",
+                        "de": "Kakaopulver"
+                    },
+                    "price": 0.50
+                },
+                {
+                    "name":
+                    {
+                        "ru": "Фрукты",
+                        "en": "Fruits",
+                        "de": "Früchte"
+                    },
+                    "price": 2.00
+                }
+            ],
+             "max_extras": 2
             },
             {
                 "name":
@@ -359,7 +429,7 @@
                         "en": "Fruits",
                         "de": "Früchte"
                     },
-                    "price": 1.00
+                    "price": 2.00
                 }
             ],
              "max_extras": 1
@@ -383,11 +453,27 @@
                 "extras": [
                 {
                     "name": {
-                        "ru": "Молоко",
+                        "ru": "Сироп",
+                        "en": "Syrup",
+                        "de": "Sirup"
+                    },
+                    "price": 1.00
+                },
+                {
+                    "name": {
+                        "ru": "Сливки",
                         "en": "Milk",
                         "de": "Milch"
                     },
-                    "price": 0.50
+                    "price": 1.50
+                },
+                {
+                    "name": {
+                        "ru": "Дополнительный эспрессо",
+                        "en": "Double espresso",
+                        "de": "Doppelter Espresso"
+                    },
+                    "price": 1.20
                 },
                 {
                     "name":
@@ -425,7 +511,62 @@
                         "ru": "Мед",
                         "en": "Honey",
                         "de": "Honig"},
+                    "price": 1.00
+                },
+                {
+                    "name":
+                    {
+                        "ru": "Мята",
+                        "en": "Mint",
+                        "de": "Minze"},
+                    "price": 0.80
+                },
+                {
+                    "name":
+                    {
+                        "ru": "Сахар",
+                        "en": "Sugar",
+                        "de": "Zucker"
+                    },
                     "price": 0.50
+                }
+            ],
+             "max_extras": 2
+            },
+            {
+                "name":
+                {
+                    "ru": "Лимонад",
+                    "en": "Lemonade",
+                    "de": "Limonade"
+                },
+                "price": 3.00,
+                "extras": [
+                {
+                    "name":
+                    {
+                        "ru": "Лед",
+                        "en": "Ice",
+                        "de": "Eis"
+                    },
+                    "price": 0.00
+                },
+                {
+                    "name":
+                    {
+                        "ru": "Фрукты",
+                        "en": "Fruits",
+                        "de": "Früchte"
+                    },
+                    "price": 2.00
+                },
+                {
+                    "name":
+                    {
+                        "ru": "Мята",
+                        "en": "Mint",
+                        "de": "Minze"},
+                    "price": 0.80
                 }
             ],
              "max_extras": 2
@@ -446,7 +587,7 @@
                         "en": "Ice",
                         "de": "Eis"
                     },
-                    "price": 0.50
+                    "price": 0.00
                 }
             ],
              "max_extras": 1
