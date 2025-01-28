@@ -25,40 +25,40 @@ class TestChooseLanguage(unittest.TestCase):
     @patch('builtins.input', side_effect=["4", "1"])
     def test_choose_invalid_language(self, mock_input):
         """Тест на некорректный ввод языка"""
-        with self.assertRaises(SystemExit):  # expect exit
-           choose_language(LANGUAGES)  # if input is not 1, 2 or 3, it should exit
+        with self.assertRaises(SystemExit) as context:
+           choose_language(LANGUAGES)
+        self.assertEqual(context.exception.code, 1)
 
 
 class TestChooseItem(unittest.TestCase):
+    @patch('builtins.input', side_effect=["1", "0"])
+    @patch('builtins.print')
+    def test_choose_item_pizza(self, mock_print, mock_input):
+        """Тест на выбор пиццы без добавок"""
+        self.assertEqual(choose_item(LANGUAGES["en"], "main"), 1)
+        mock_print.assert_called_with("Added: Pizza")
 
-    def setUp(self):
-        self.lang = LANGUAGES["en"]  # задаем язык для тестов
+    @patch('builtins.input', side_effect=["2", "1", "0"])
+    @patch('builtins.print')
+    def test_choose_item_pasta_with_cheese(self, mock_print, mock_input):
+        """Тест на выбор пасты c сыром"""
+        self.assertEqual(choose_item(LANGUAGES["en"], "main"), 2)
+        mock_print.assert_called_with("Added: Pasta")
+        mock_print.assert_called_with("Added: Cheese")
 
-    @patch('builtins.input', return_value="1")
-    def test_choose_first_item(self, mock_input):
-        """Тест на выбор первого блюда"""
-        category_name = "main_course"
-        items = CATEGORIES[category_name]["items"]
-        expected_item = items[0]
-        actual_item = choose_item(items, category_name, self.lang, "en", show_back=True)
-        self.assertEqual(actual_item["name"], expected_item["name"]["en"])
-        self.assertEqual(actual_item["price"], expected_item["price"])
+    @patch('builtins.input', side_effect=["5", "1", "0"])
+    @patch('builtins.print')
+    def test_choose_item_invalid_choice(self, mock_print, mock_input):
+        """Тест на некорректный ввод"""
+        self.assertEqual(choose_item(LANGUAGES["en"], "main"), None)
+        mock_print.assert_called_with("Invalid choice. Please try again.")
 
     @patch('builtins.input', side_effect=["9"])
-    def test_choose_back(self, mock_input):
-        """Тест на выбор опции назад"""
-        category_name = "main_course"
-        items = CATEGORIES[category_name]["items"]
-        actual_item = choose_item(items, category_name, self.lang, "en", show_back=True)
-        self.assertEqual(actual_item, "back")
-
-    @patch('builtins.input', side_effect=["a", "9"])
-    def test_choose_invalid_item(self, mock_input):
-        """Тест на выбор некорректного блюда"""
-        category_name = "main_course"
-        items = CATEGORIES[category_name]["items"]
-        actual_item = choose_item(items, category_name, self.lang, "en", show_back=True)
-        self.assertEqual(actual_item, "back")
+    @patch('builtins.print')
+    def test_choose_item_go_back(self, mock_print, mock_input):
+      """Тест на возврат в предыдущее меню"""
+      self.assertEqual(choose_item(LANGUAGES["en"], "main"), 9)
+      mock_print.assert_not_called()
 
 
 if __name__ == '__main__':
