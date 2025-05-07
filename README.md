@@ -1,36 +1,87 @@
-# Чат-Бот
-## Описание скрипта
+# Chat-Bot
+## 🇩🇪 Beschreibung
+Dieses Projekt ist eine textbasierte Benutzeroberfläche für die Bestellung in einem Gastronomiebetrieb. Der Chatbot unterstützt mehrere Sprachen und bietet eine benutzerfreundliche Oberfläche.
 
-Этот скрипт представляет собой простой текстовый интерфейс для оформления заказов в заведении общепита. Он позволяет пользователю выбрать блюдо из нескольких категорий, добавить к нему добавки и просмотреть итоговый заказ с общей суммой.
+## 🇷🇺 Описание
+Этот проект представляет собой текстовый интерфейс для оформления заказов в заведении общепита. Чат-бот поддерживает несколько языков и предоставляет интуитивно понятный интерфейс для пользователей.
 
-## Возможности
+## 🇬🇧 Description
+This project is a text-based interface for placing orders in a catering establishment. The chatbot supports multiple languages and provides an intuitive interface for users.
 
-*   Поддержка нескольких языков (русский, английский, немецкий).
-*   Выбор блюд из различных категорий.
-*   Выбор добавок к блюдам.
-*   Просмотр итогового заказа с ценами.
-*   Возможность изменения/удаления блюд из заказа перед его подтверждением.
-*   Интуитивно понятный текстовый интерфейс.
 
-## Особенность
 
+
+## 🇩🇪 Funktionen
+- Mehrsprachige Unterstützung (Russisch, Englisch, Deutsch).
+- Auswahl von Gerichten aus verschiedenen Kategorien.
+- Zusätzliche Toppings für Gerichte.
+- Anzeige der endgültigen Bestellung mit Preisen.
+- Bearbeiten oder Entfernen von Gerichten vor der Bestätigung der Bestellung.
+- Benutzerfreundliche Oberfläche.
+
+## 🇷🇺 Возможности
+- Поддержка нескольких языков (русский, английский, немецкий).
+- Выбор блюд из различных категорий.
+- Добавки к блюдам.
+- Просмотр итогового заказа с ценами.
+- Изменение или удаление блюд перед подтверждением заказа.
+- Интуитивно понятный интерфейс.
+
+## 🇬🇧 Features
+- Multilingual support (Russian, English, German).
+- Selection of dishes from different categories.
+- Additional toppings for dishes.
+- View final order with prices.
+- Edit or remove dishes before confirming the order.
+- User-friendly interface.
+  
+---
+
+## 🇩🇪 Besonderheit
+Das Hauptmerkmal des Skripts ist seine Mehrsprachigkeit und das strukturierte Datenspeicherungssystem für Gerichte und Beilagen. Dieses Design ermöglicht die einfache Hinzufügung neuer Menüelemente und die Unterstützung mehrerer Sprachversionen der Anwendung ohne wesentliche Codeänderungen. Sprach- und Gerichtsdaten werden in separaten JSON-Dateien gespeichert, was die Bearbeitung und Verwaltung vereinfacht.
+
+## 🇷🇺 Особенность
 Главной особенностью скрипта является его мультиязычность и структурированная система хранения данных о блюдах и добавках, что позволяет легко добавлять новые позиции в меню и поддерживать несколько языковых версий приложения без значительных изменений кода. Данные о языках и блюдах хранятся в отдельных JSON файлах, что упрощает редактирование и управление ими.
 
-## Потенциал
+## 🇬🇧 Distinctive Feature
+The main feature of the script is its multilingual support and structured data storage system for dishes and toppings. This design allows for easy addition of new menu items and support for multiple language versions of the application without significant code changes. Language and dish data are stored in separate JSON files, simplifying editing and management.
 
-Скрипт имеет большой потенциал для дальнейшего развития:
+---
 
-*   **Интеграция с платежными системами:** Добавление возможности оплаты заказа онлайн.
-*   **Расширение функционала:** Добавление новых категорий блюд, опций (например, уровень остроты, размер порции), дополнительных функций (например, история заказов, бонусная система).
-*   **Разработка графического интерфейса:** Перенос функционала скрипта на более удобный графический интерфейс.
-*   **Интеграция с базой данных:** Хранение данных о меню и заказах в базе данных для более эффективного управления.
-*   **Использование в реальных условиях:** Развертывание скрипта на сервере или использование в качестве основы для полноценного приложения для приема заказов.
+## 🇩🇪 Potenzial
+- Integration mit Zahlungssystemen.
+- Erweiterung der Funktionen (neue Kategorien, Schärfegrade, Portionen).
+- Entwicklung einer grafischen Benutzeroberfläche.
+- Integration mit einer Datenbank zur Speicherung von Menüs und Bestellungen.
+- Einsatz in realen Bedingungen.
 
-## Заключение
+## 🇷🇺 Потенциал
+- Интеграция с платежными системами.
+- Расширение функционала (новые категории блюд, уровни остроты, порции).
+- Разработка графического интерфейса.
+- Интеграция с базой данных для хранения меню и заказов.
+- Использование в реальных условиях.
 
-В целом, данный скрипт представляет собой хорошее начало для разработки более сложной системы управления заказами в сфере общепита. Его простота и расширяемость делают его удобным инструментом для экспериментов и дальнейшего развития.
+## 🇬🇧 Potential
+- Integration with payment systems.
+- Expanding functionality (new dish categories, spice levels, portions).
+- Development of a graphical interface.
+- Integration with a database for storing menu and orders.
+- Real-world deployment.
 
-## Файловая структура
+---
+
+## 🇩🇪 Fazit
+Dieses Projekt dient als Grundlage für die Entwicklung eines komplexeren Bestellmanagementsystems. Es kann an verschiedene Anwendungsszenarien angepasst werden.
+
+## 🇷🇺 Заключение
+Данный проект представляет собой основу для разработки более сложной системы управления заказами. Он может быть адаптирован под различные сценарии использования.
+
+## 🇬🇧 Conclusion
+This project serves as a foundation for developing a more complex order management system. It can be adapted for various use cases.
+
+
+## 🇩🇪 Dateistruktur /  🇷🇺  Файловая структура /  🇬🇧 File Structure
     Chat-Bot/ 
         ├── data/  
         │   ├── languages.json 
@@ -45,6 +96,17 @@
         ├── utils.py
         └── data.py
 
+🇩🇪
+*   **`data/`:** Enthält Datendateien (Sprachstrings und Menü) im JSON-Format.
+*   **`docs/`:** Enthält die Projektdokumentation.
+*   **`tests/`:** Ordner für Unit-Tests.
+*   **`main.py`:** Hauptdatei zum Starten der Anwendung.
+*   **`ui.py`:** Funktionen für die Benutzeroberfläche.
+*   **`order_logic.py`:** Verwalten der Bestelllogik mit der Funktion `start_order`.
+*   **`utils.py`:** Enthält Hilfsfunktionen.
+*   **`data.py`:** Definiert die globalen Variablen `LANGUAGES` und `CATEGORIES`.
+
+🇷🇺
 *   **`data/`:** Содержит файлы с данными (языковые строки и меню) в формате JSON.
 *   **`docs/`:** Содержит документацию проекта.
 *   **`tests/`:** Папка для хранения юнит-тестов.
@@ -53,3 +115,13 @@
 *   **`order_logic.py`:** Файл с функцией `start_order`, управляющей логикой заказа.
 *   **`utils.py`:** Файл с вспомогательными функциями.
 *   **`data.py`:** Файл, содержащий общие переменные `LANGUAGES` и `CATEGORIES`.
+
+🇬🇧
+*   **`data/`:** Contains data files (language strings and menu) in JSON format.
+*   **`docs/`:** Contains project documentation.
+*   **`tests/`:** Folder for unit tests.
+*   **`main.py`:** Main application entry point.
+*   **`ui.py`:** Functions for user interface.
+*   **`order_logic.py`:** Manages order logic with the `start_order` function.
+*   **`utils.py`:** Contains utility functions.
+*   **`data.py`:** Defines global variables `LANGUAGES` and `CATEGORIES`.
