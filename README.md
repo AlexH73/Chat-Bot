@@ -123,7 +123,7 @@ Feel free to open an [Issue](https://github.com/AlexH73/Chat-Bot/issues) or subm
 
 ## 📜 License
 
-This project is licensed under the MIT License. Feel free to contribute, modify, and share!
+This project is licensed under the [MIT License](https://github.com/AlexH73/Chat-Bot/tree/main?tab=MIT-1-ov-file). Feel free to contribute, modify, and share!
 
 ---
 
